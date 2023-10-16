@@ -1,7 +1,7 @@
 ﻿
-namespace QLTVT
+namespace QLVT
 {
-    partial class FormDangNhap
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
