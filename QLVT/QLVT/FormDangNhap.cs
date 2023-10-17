@@ -43,10 +43,9 @@ namespace QLVT
 
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            if (txtLogin.Text.Trim() == "")
+            if (txtLogin.Text.Trim() == "" || txtPassword.Text.Trim() == "")
             {
-                MessageBox.Show("Tài khoản đăng nhập không được bỏ trống!", "Báo lỗi đăng nhập", MessageBoxButtons.OK);
-                txtLogin.Focus();
+                MessageBox.Show("Tài khoản or mật khẩu không thể bỏ trống", "Thông Báo", MessageBoxButtons.OK);
                 return;
             }
             Program.mlogin = txtLogin.Text.Trim();
@@ -75,11 +74,14 @@ namespace QLVT
             Program.formMain.MANV.Text = "MÃ NHÂN VIÊN : " + Program.username;
             Program.formMain.HOTEN.Text = "HỌ TÊN : " + Program.mHoTen;
             Program.formMain.NHOM.Text = "NHÓM : " + Program.mGroup;
+            this.Visible = false;
+            Program.formMain.enableButtons();
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+            Program.formMain.Close();
         }
     }
 }

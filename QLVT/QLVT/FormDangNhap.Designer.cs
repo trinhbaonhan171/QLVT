@@ -55,7 +55,7 @@ namespace QLVT
             tENCNLabel.AutoSize = true;
             tENCNLabel.Location = new System.Drawing.Point(75, 185);
             tENCNLabel.Name = "tENCNLabel";
-            tENCNLabel.Size = new System.Drawing.Size(118, 22);
+            tENCNLabel.Size = new System.Drawing.Size(97, 19);
             tENCNLabel.TabIndex = 0;
             tENCNLabel.Text = "CHI NHÁNH";
             // 
@@ -81,9 +81,9 @@ namespace QLVT
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(127, 83);
+            this.label3.Location = new System.Drawing.Point(186, 83);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(439, 55);
+            this.label3.Size = new System.Drawing.Size(343, 43);
             this.label3.TabIndex = 8;
             this.label3.Text = "QUẢN LÝ VẬT TƯ";
             // 
@@ -93,7 +93,7 @@ namespace QLVT
             this.btnThoat.ForeColor = System.Drawing.SystemColors.Control;
             this.btnThoat.Location = new System.Drawing.Point(386, 373);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(191, 52);
+            this.btnThoat.Size = new System.Drawing.Size(178, 52);
             this.btnThoat.TabIndex = 7;
             this.btnThoat.Text = "THOÁT";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -103,9 +103,9 @@ namespace QLVT
             // 
             this.btnDangNhap.BackColor = System.Drawing.Color.Blue;
             this.btnDangNhap.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDangNhap.Location = new System.Drawing.Point(137, 373);
+            this.btnDangNhap.Location = new System.Drawing.Point(166, 373);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(203, 52);
+            this.btnDangNhap.Size = new System.Drawing.Size(174, 52);
             this.btnDangNhap.TabIndex = 6;
             this.btnDangNhap.Text = "ĐĂNG NHẬP";
             this.btnDangNhap.UseVisualStyleBackColor = false;
@@ -116,14 +116,14 @@ namespace QLVT
             this.txtPassword.Location = new System.Drawing.Point(218, 306);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(359, 30);
+            this.txtPassword.Size = new System.Drawing.Size(359, 26);
             this.txtPassword.TabIndex = 5;
             // 
             // txtLogin
             // 
             this.txtLogin.Location = new System.Drawing.Point(218, 241);
             this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(359, 30);
+            this.txtLogin.Size = new System.Drawing.Size(359, 26);
             this.txtLogin.TabIndex = 4;
             // 
             // label2
@@ -131,7 +131,7 @@ namespace QLVT
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(75, 314);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(113, 22);
+            this.label2.Size = new System.Drawing.Size(92, 19);
             this.label2.TabIndex = 3;
             this.label2.Text = "MẬT KHẨU";
             // 
@@ -140,7 +140,7 @@ namespace QLVT
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(75, 249);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(117, 22);
+            this.label1.Size = new System.Drawing.Size(96, 19);
             this.label1.TabIndex = 2;
             this.label1.Text = "TÀI KHOẢN";
             // 
@@ -152,7 +152,7 @@ namespace QLVT
             this.tENCNComboBox.FormattingEnabled = true;
             this.tENCNComboBox.Location = new System.Drawing.Point(218, 177);
             this.tENCNComboBox.Name = "tENCNComboBox";
-            this.tENCNComboBox.Size = new System.Drawing.Size(359, 30);
+            this.tENCNComboBox.Size = new System.Drawing.Size(359, 27);
             this.tENCNComboBox.TabIndex = 1;
             this.tENCNComboBox.ValueMember = "TENSERVER";
             this.tENCNComboBox.SelectedIndexChanged += new System.EventHandler(this.tENCNComboBox_SelectedIndexChanged);
@@ -192,7 +192,7 @@ namespace QLVT
             // 
             // FormDangNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 497);
             this.Controls.Add(this.groupBox1);

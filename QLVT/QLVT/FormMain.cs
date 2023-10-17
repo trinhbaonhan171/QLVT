@@ -33,25 +33,25 @@ namespace QLVT
         /************************************************************
          *enableButtons: kích hoạt các tab chức năng và nút đăng xuất
          ************************************************************/
-        /*public void enableButtons()
+        public void enableButtons()
         {
 
             btnDangNhap.Enabled = false;
             btnDangXuat.Enabled = true;
 
-            pageNhapXuat.Visible = true;
-            pageBaoCao.Visible = true;
-            btnLapTaiKhoan.Enabled = true;
+            /*pageNhapXuat.Visible = true;*/
+           /* pageBaoCao.Visible = true;
+            btnLapTaiKhoan.Enabled = true;*/
 
-            if (Program.role == "USER")
+            if (Program.mGroup == "USER")
             {
-                btnLapTaiKhoan.Enabled = false;
+                /*btnLapTaiKhoan.Enabled = false;*/
             }
 
             //pageTaiKhoan.Visible = true;
 
 
-        }*/
+        }
         /************************************************************
          * Dispose: giải phóng các form khỏi bộ nhớ. Ví dụ form nhân viên,...
          * Close: đóng hoàn toàn chương trình lại
