@@ -30,14 +30,9 @@ namespace QLVT
 
         private void tENCNComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            try
+            if(tENCNComboBox.SelectedValue != null)
             {
                 Program.server_name = tENCNComboBox.SelectedValue.ToString();
-
-            }
-            catch(Exception)
-            {
-
             }
         }
 
@@ -81,7 +76,6 @@ namespace QLVT
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
-            Program.formMain.Close();
         }
     }
 }

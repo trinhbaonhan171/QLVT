@@ -54,3 +54,4 @@ D:\NHAN\project_QLVT\QLVT\QLVT\QLVT\obj\Debug\QLVT.csproj.CopyComplete
 D:\NHAN\project_QLVT\QLVT\QLVT\QLVT\obj\Debug\QLVT.exe
 D:\NHAN\project_QLVT\QLVT\QLVT\QLVT\obj\Debug\QLVT.pdb
 D:\NHAN\project_QLVT\QLVT\QLVT\QLVT\obj\Debug\QLVT.FormMain.resources
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.FormTaoTaiKhoan.resources
