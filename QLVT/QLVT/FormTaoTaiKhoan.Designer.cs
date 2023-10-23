@@ -50,10 +50,10 @@ namespace QLVT
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(1, 3);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(737, 594);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(635, 594);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -62,7 +62,7 @@ namespace QLVT
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(198, 36);
+            this.label3.Location = new System.Drawing.Point(120, 32);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(331, 43);
@@ -73,8 +73,8 @@ namespace QLVT
             // 
             this.btnThoat.BackColor = System.Drawing.Color.Red;
             this.btnThoat.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnThoat.Location = new System.Drawing.Point(390, 295);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Location = new System.Drawing.Point(351, 312);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(155, 48);
             this.btnThoat.TabIndex = 16;
@@ -85,8 +85,8 @@ namespace QLVT
             // 
             this.btnDangNhap.BackColor = System.Drawing.Color.Blue;
             this.btnDangNhap.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDangNhap.Location = new System.Drawing.Point(92, 296);
-            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnDangNhap.Location = new System.Drawing.Point(53, 313);
+            this.btnDangNhap.Margin = new System.Windows.Forms.Padding(4);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(194, 47);
             this.btnDangNhap.TabIndex = 15;
@@ -95,8 +95,8 @@ namespace QLVT
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(206, 195);
-            this.txtPassword.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPassword.Location = new System.Drawing.Point(167, 212);
+            this.txtPassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(339, 26);
@@ -104,8 +104,8 @@ namespace QLVT
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(206, 134);
-            this.txtLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLogin.Location = new System.Drawing.Point(167, 151);
+            this.txtLogin.Margin = new System.Windows.Forms.Padding(4);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(339, 26);
             this.txtLogin.TabIndex = 13;
@@ -114,7 +114,7 @@ namespace QLVT
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(88, 202);
+            this.label2.Location = new System.Drawing.Point(49, 219);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 19);
@@ -125,7 +125,7 @@ namespace QLVT
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(88, 137);
+            this.label1.Location = new System.Drawing.Point(49, 154);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 19);
@@ -136,10 +136,10 @@ namespace QLVT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(740, 600);
+            this.ClientSize = new System.Drawing.Size(636, 600);
             this.Controls.Add(this.groupBox1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormTaoTaiKhoan";
             this.Text = "FormTaoTaiKhoan";
             this.groupBox1.ResumeLayout(false);

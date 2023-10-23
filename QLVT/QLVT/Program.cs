@@ -20,6 +20,7 @@ namespace QLVT
          **********************************************/
         public static SqlConnection conn = new SqlConnection();//conn
         public static String connstr = "";//connstr
+        public static SqlDataReader myReader;//myReader
         /**********************************************
            * servername: tên server(phân mảnh) sẽ kết nối tới
            * 
@@ -30,6 +31,7 @@ namespace QLVT
            * đăng nhập vào server(phân mảnh)
            ***********************************************/
         public static string server_name = "";//servername
+        public static String serverNameLeft = ""; // chứa phân mảnh còn lại
         public static String username = "";//username
 
         public static String mlogin = "";//mlogin

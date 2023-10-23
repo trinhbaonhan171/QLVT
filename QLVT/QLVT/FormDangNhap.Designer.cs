@@ -40,20 +40,21 @@ namespace QLVT
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tENCNComboBox = new System.Windows.Forms.ComboBox();
-            this.bdsDSPM = new System.Windows.Forms.BindingSource(this.components);
-            this.dS = new QLVT.DS();
-            this.v_DS_PHANMANHTableAdapter = new QLVT.DSTableAdapters.V_DS_PHANMANHTableAdapter();
-            this.tableAdapterManager = new QLVT.DSTableAdapters.TableAdapterManager();
+            this.bdsPM = new System.Windows.Forms.BindingSource(this.components);
+            this.qLVTDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dS = new QLVT.QLVT_DataSet();
+            this.v_DS_PHANMANHTableAdapter1 = new QLVT.QLVT_DataSetTableAdapters.V_DS_PHANMANHTableAdapter();
             tENCNLabel = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsDSPM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsPM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).BeginInit();
             this.SuspendLayout();
             // 
             // tENCNLabel
             // 
             tENCNLabel.AutoSize = true;
-            tENCNLabel.Location = new System.Drawing.Point(75, 185);
+            tENCNLabel.Location = new System.Drawing.Point(52, 185);
             tENCNLabel.Name = "tENCNLabel";
             tENCNLabel.Size = new System.Drawing.Size(97, 19);
             tENCNLabel.TabIndex = 0;
@@ -81,7 +82,7 @@ namespace QLVT
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(186, 83);
+            this.label3.Location = new System.Drawing.Point(142, 53);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(343, 43);
             this.label3.TabIndex = 8;
@@ -91,9 +92,9 @@ namespace QLVT
             // 
             this.btnThoat.BackColor = System.Drawing.Color.Red;
             this.btnThoat.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnThoat.Location = new System.Drawing.Point(386, 373);
+            this.btnThoat.Location = new System.Drawing.Point(413, 386);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(178, 52);
+            this.btnThoat.Size = new System.Drawing.Size(147, 39);
             this.btnThoat.TabIndex = 7;
             this.btnThoat.Text = "THOÁT";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -103,9 +104,9 @@ namespace QLVT
             // 
             this.btnDangNhap.BackColor = System.Drawing.Color.Blue;
             this.btnDangNhap.ForeColor = System.Drawing.SystemColors.Control;
-            this.btnDangNhap.Location = new System.Drawing.Point(166, 373);
+            this.btnDangNhap.Location = new System.Drawing.Point(217, 386);
             this.btnDangNhap.Name = "btnDangNhap";
-            this.btnDangNhap.Size = new System.Drawing.Size(174, 52);
+            this.btnDangNhap.Size = new System.Drawing.Size(146, 39);
             this.btnDangNhap.TabIndex = 6;
             this.btnDangNhap.Text = "ĐĂNG NHẬP";
             this.btnDangNhap.UseVisualStyleBackColor = false;
@@ -113,7 +114,7 @@ namespace QLVT
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(218, 306);
+            this.txtPassword.Location = new System.Drawing.Point(201, 306);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(359, 26);
@@ -121,7 +122,7 @@ namespace QLVT
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(218, 241);
+            this.txtLogin.Location = new System.Drawing.Point(201, 241);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(359, 26);
             this.txtLogin.TabIndex = 4;
@@ -129,7 +130,7 @@ namespace QLVT
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(75, 314);
+            this.label2.Location = new System.Drawing.Point(57, 313);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(92, 19);
             this.label2.TabIndex = 3;
@@ -138,7 +139,7 @@ namespace QLVT
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(75, 249);
+            this.label1.Location = new System.Drawing.Point(53, 248);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(96, 19);
             this.label1.TabIndex = 2;
@@ -146,49 +147,35 @@ namespace QLVT
             // 
             // tENCNComboBox
             // 
-            this.tENCNComboBox.DataSource = this.bdsDSPM;
+            this.tENCNComboBox.DataSource = this.bdsPM;
             this.tENCNComboBox.DisplayMember = "TENCN";
             this.tENCNComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.tENCNComboBox.FormattingEnabled = true;
-            this.tENCNComboBox.Location = new System.Drawing.Point(218, 177);
+            this.tENCNComboBox.Location = new System.Drawing.Point(201, 177);
             this.tENCNComboBox.Name = "tENCNComboBox";
             this.tENCNComboBox.Size = new System.Drawing.Size(359, 27);
             this.tENCNComboBox.TabIndex = 1;
             this.tENCNComboBox.ValueMember = "TENSERVER";
             this.tENCNComboBox.SelectedIndexChanged += new System.EventHandler(this.tENCNComboBox_SelectedIndexChanged);
             // 
-            // bdsDSPM
+            // bdsPM
             // 
-            this.bdsDSPM.DataMember = "V_DS_PHANMANH";
-            this.bdsDSPM.DataSource = this.dS;
+            this.bdsPM.DataMember = "V_DS_PHANMANH";
+            this.bdsPM.DataSource = this.qLVTDataSetBindingSource;
+            // 
+            // qLVTDataSetBindingSource
+            // 
+            this.qLVTDataSetBindingSource.DataSource = this.dS;
+            this.qLVTDataSetBindingSource.Position = 0;
             // 
             // dS
             // 
-            this.dS.DataSetName = "DS";
+            this.dS.DataSetName = "QLVT_DataSet";
             this.dS.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // v_DS_PHANMANHTableAdapter
+            // v_DS_PHANMANHTableAdapter1
             // 
-            this.v_DS_PHANMANHTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.CHINHANHTableAdapter = null;
-            this.tableAdapterManager.Connection = null;
-            this.tableAdapterManager.CT_DONDHTableAdapter = null;
-            this.tableAdapterManager.CT_HOADONTableAdapter = null;
-            this.tableAdapterManager.CT_PHIEUNHAPTableAdapter = null;
-            this.tableAdapterManager.DONDHTableAdapter = null;
-            this.tableAdapterManager.HANGHOATableAdapter = null;
-            this.tableAdapterManager.HOADONTableAdapter = null;
-            this.tableAdapterManager.KHACHHANGTableAdapter = null;
-            this.tableAdapterManager.KHOTableAdapter = null;
-            this.tableAdapterManager.LOAIHANGHOATableAdapter = null;
-            this.tableAdapterManager.NHACCTableAdapter = null;
-            this.tableAdapterManager.NHANVIENTableAdapter = null;
-            this.tableAdapterManager.PHIEUNHAPTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = QLVT.DSTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            this.v_DS_PHANMANHTableAdapter1.ClearBeforeFill = true;
             // 
             // FormDangNhap
             // 
@@ -203,7 +190,8 @@ namespace QLVT
             this.Load += new System.EventHandler(this.FormDangNhap_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bdsDSPM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdsPM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVTDataSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dS)).EndInit();
             this.ResumeLayout(false);
 
@@ -212,10 +200,6 @@ namespace QLVT
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private DS dS;
-        private System.Windows.Forms.BindingSource bdsDSPM;
-        private DSTableAdapters.V_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter;
-        private DSTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.ComboBox tENCNComboBox;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.TextBox txtLogin;
@@ -224,5 +208,9 @@ namespace QLVT
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnThoat;
         private System.Windows.Forms.Button btnDangNhap;
+        private System.Windows.Forms.BindingSource qLVTDataSetBindingSource;
+        private QLVT_DataSet dS;
+        private System.Windows.Forms.BindingSource bdsPM;
+        private QLVT_DataSetTableAdapters.V_DS_PHANMANHTableAdapter v_DS_PHANMANHTableAdapter1;
     }
 }

@@ -39,6 +39,9 @@
     <Reference Include="DevExpress.XtraBars.v19.2" />
     <Reference Include="DevExpress.Sparkline.v19.2.Core" />
     <Reference Include="DevExpress.XtraEditors.v19.2" />
+    <Reference Include="DevExpress.XtraGrid.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v19.2, Version=19.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -56,6 +59,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="FormChuyenChiNhanh.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormChuyenChiNhanh.Designer.cs">
+      <DependentUpon>FormChuyenChiNhanh.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +77,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormNhanVien.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNhanVien.Designer.cs">
+      <DependentUpon>FormNhanVien.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormTaoTaiKhoan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -76,11 +91,22 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QLVT_DataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QLVT_DataSet.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormChuyenChiNhanh.resx">
+      <DependentUpon>FormChuyenChiNhanh.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNhanVien.resx">
+      <DependentUpon>FormNhanVien.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTaoTaiKhoan.resx">
       <DependentUpon>FormTaoTaiKhoan.cs</DependentUpon>
@@ -116,6 +142,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QLVT_DataSet.xsc">
+      <DependentUpon>QLVT_DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="QLVT_DataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>QLVT_DataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QLVT_DataSet.xss">
+      <DependentUpon>QLVT_DataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
