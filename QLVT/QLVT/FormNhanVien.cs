@@ -83,6 +83,7 @@ namespace QLVT
                 this.btnHOANTAC.Enabled = false;
                 this.btnLAMMOI.Enabled = true;
                 this.btnTHOAT.Enabled = true;
+                this.btnChuyenChiNhanh.Enabled = false;
 
                 this.panelNhapLieu.Enabled = false;
             }
@@ -100,6 +101,7 @@ namespace QLVT
                 this.btnHOANTAC.Enabled = false;
                 this.btnLAMMOI.Enabled = true;
                 this.btnTHOAT.Enabled = true;
+                this.btnChuyenChiNhanh.Enabled = true;
 
                 this.panelNhapLieu.Enabled = true;
                 this.txtMANV.Enabled = false;
@@ -178,6 +180,7 @@ namespace QLVT
 
             this.btnHOANTAC.Enabled = true;
             this.btnLAMMOI.Enabled = false;
+            this.btnChuyenChiNhanh.Enabled = false;
             this.btnTHOAT.Enabled = false;
 
             this.gcNhanVien.Enabled = false;
@@ -367,6 +370,7 @@ namespace QLVT
                         btnHOANTAC.Enabled = true;
 
                         btnLAMMOI.Enabled = true;
+                        btnChuyenChiNhanh.Enabled = true;
                         btnTHOAT.Enabled = true;
 
                         this.txtMANV.Enabled = false;
@@ -437,6 +441,7 @@ namespace QLVT
 
                 this.btnHOANTAC.Enabled = false;
                 this.btnLAMMOI.Enabled = true;
+                this.btnChuyenChiNhanh.Enabled = true;
                 this.btnTHOAT.Enabled = true;
                 this.trangThaiXoaCheckBox.Checked = false;
 
