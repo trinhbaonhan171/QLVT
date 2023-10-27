@@ -615,5 +615,116 @@ namespace QLVT
                 undoList.Pop();
             }
         }
+        public void chuyenChiNhanh(String chiNhanh)
+        {
+            //Console.WriteLine("Chi nhánh được chọn là " + chiNhanh);
+
+            /*Step 1*/
+            if (Program.server_name == chiNhanh)
+            {
+                MessageBox.Show("Hãy chọn chi nhánh khác chi nhánh bạn đang đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+
+            /*Step 2*/
+            String maChiNhanhHienTai = "";
+            String maChiNhanhMoi = "";
+            int viTriHienTai = bdsNhanVien.Position;
+            String maNhanVien = ((DataRowView)bdsNhanVien[viTriHienTai])["MANV"].ToString();
+
+            if (chiNhanh.Contains("1"))
+            {
+                maChiNhanhHienTai = "CN2";
+                maChiNhanhMoi = "CN1";
+            }
+            else if (chiNhanh.Contains("2"))
+            {
+                maChiNhanhHienTai = "CN1";
+                maChiNhanhMoi = "CN2";
+            }
+            else
+            {
+                MessageBox.Show("Mã chi nhánh không hợp lệ", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            Console.WriteLine("Ma chi nhanh hien tai : " + maChiNhanhHienTai);
+            Console.WriteLine("Ma chi nhanh Moi : " + maChiNhanhMoi);
+
+
+
+            /*Step 3*/
+            String cauTruyVanHoanTac = "EXEC sp_ChuyenChiNhanh " + maNhanVien + ",'" + maChiNhanhHienTai + "'";
+            undoList.Push(cauTruyVanHoanTac);
+
+            Program.serverNameLeft = chiNhanh; /*Lấy tên chi nhánh tới để làm tính năng hoàn tác*/
+            Console.WriteLine("Ten server con lai" + Program.serverNameLeft);
+
+
+
+            /*Step 4*/
+            String cauTruyVan = "EXEC sp_ChuyenChiNhanh " + maNhanVien + ",'" + maChiNhanhMoi + "'";
+            Console.WriteLine("Cau Truy Van: " + cauTruyVan);
+            Console.WriteLine("Cau Truy Van Hoan Tac: " + cauTruyVanHoanTac);
+
+            SqlCommand sqlcommand = new SqlCommand(cauTruyVan, Program.conn);
+            try
+            {
+                Program.myReader = Program.ExecSqlDataReader(cauTruyVan);
+                MessageBox.Show("Chuyển chi nhánh thành công", "thông báo", MessageBoxButtons.OK);
+
+                if (Program.myReader == null)
+                {
+                    return;/*khong co ket qua tra ve thi ket thuc luon*/
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("thực thi database thất bại!\n\n" + ex.Message, "thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(ex.Message);
+                return;
+            }
+            this.nHANVIENTableAdapter.Update(this.DS.NHANVIEN);
+
+
+        }
+        private void btnChuyenChiNhanh_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            int viTriHienTai = bdsNhanVien.Position;
+            int trangThaiXoa = int.Parse(((DataRowView)(bdsNhanVien[viTriHienTai]))["TRANGTHAIXOA"].ToString());
+            string maNhanVien = ((DataRowView)(bdsNhanVien[viTriHienTai]))["MANV"].ToString();
+
+            if (maNhanVien == Program.username)
+            {
+                MessageBox.Show("Không thể chuyển chính người đang đăng nhập!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            /*Step 1 - Kiem tra trang thai xoa*/
+            if (trangThaiXoa == 1)
+            {
+                MessageBox.Show("Nhân viên này không có ở chi nhánh này", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+
+            /*Step 2 Kiem tra xem form da co trong bo nho chua*/
+            Form f = this.CheckExists(typeof(FormChuyenChiNhanh));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            FormChuyenChiNhanh form = new FormChuyenChiNhanh();
+            form.Show();
+
+            /*Step 3*/
+            /*đóng gói hàm chuyenChiNhanh từ formNHANVIEN đem về formChuyenChiNhanh để làm việc*/
+            form.branchTransfer = new FormChuyenChiNhanh.MyDelegate(chuyenChiNhanh);
+
+            /*Step 4*/
+            this.btnHOANTAC.Enabled = true;
+        }
     }
 }
