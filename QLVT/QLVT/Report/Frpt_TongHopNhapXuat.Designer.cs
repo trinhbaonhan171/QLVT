@@ -64,7 +64,7 @@ namespace QLVT
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(46, 75);
+            this.label2.Location = new System.Drawing.Point(39, 104);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(120, 22);
             this.label2.TabIndex = 5;
@@ -74,7 +74,7 @@ namespace QLVT
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(439, 74);
+            this.label3.Location = new System.Drawing.Point(432, 103);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(91, 22);
             this.label3.TabIndex = 6;
@@ -84,8 +84,8 @@ namespace QLVT
             // dteTuNgay
             // 
             this.dteTuNgay.EditValue = null;
-            this.dteTuNgay.Location = new System.Drawing.Point(174, 75);
-            this.dteTuNgay.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dteTuNgay.Location = new System.Drawing.Point(167, 104);
+            this.dteTuNgay.Margin = new System.Windows.Forms.Padding(5);
             this.dteTuNgay.Name = "dteTuNgay";
             this.dteTuNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -97,9 +97,9 @@ namespace QLVT
             // 
             // btnPreview
             // 
-            this.btnPreview.Location = new System.Drawing.Point(631, 28);
+            this.btnPreview.Location = new System.Drawing.Point(647, 21);
             this.btnPreview.Name = "btnPreview";
-            this.btnPreview.Size = new System.Drawing.Size(96, 26);
+            this.btnPreview.Size = new System.Drawing.Size(114, 40);
             this.btnPreview.TabIndex = 9;
             this.btnPreview.Text = "Preview";
             this.btnPreview.UseVisualStyleBackColor = true;
@@ -108,8 +108,8 @@ namespace QLVT
             // dteToiNgay
             // 
             this.dteToiNgay.EditValue = null;
-            this.dteToiNgay.Location = new System.Drawing.Point(538, 75);
-            this.dteToiNgay.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dteToiNgay.Location = new System.Drawing.Point(531, 104);
+            this.dteToiNgay.Margin = new System.Windows.Forms.Padding(5);
             this.dteToiNgay.Name = "dteToiNgay";
             this.dteToiNgay.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
