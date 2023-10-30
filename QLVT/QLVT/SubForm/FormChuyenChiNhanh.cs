@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace QLVT
 {
@@ -21,14 +23,13 @@ namespace QLVT
             BindingSource bds_chuyenChiNhanh = new BindingSource();
             bds_chuyenChiNhanh.DataSource = Program.bds_dspm.DataSource;
             bds_chuyenChiNhanh.DataMember = Program.bds_dspm.DataMember;
-            /*branchBindingSource = Program.bds_dspm;*/
+
 
             cmbChuyenChiNhanh.DataSource = bds_chuyenChiNhanh;
             /*sao chep bingding source tu form dang nhap*/
             cmbChuyenChiNhanh.DisplayMember = "TENCN";
             cmbChuyenChiNhanh.ValueMember = "TENSERVER";
-            cmbChuyenChiNhanh.SelectedIndex = Program.mChiNhanh;
-
+            cmbChuyenChiNhanh.SelectedIndex = Program.mChiNhanh;  
         }
         private Form CheckExists(Type ftype)
         {
@@ -58,7 +59,6 @@ namespace QLVT
             {
                 branchTransfer(cmbChuyenChiNhanh.SelectedValue.ToString());
             }
-
             this.Dispose();
         }
     }

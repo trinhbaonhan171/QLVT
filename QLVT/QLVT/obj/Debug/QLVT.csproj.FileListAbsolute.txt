@@ -1,7 +1,3 @@
-D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.Pdf.v19.2.Core.dll
-D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.Printing.v19.2.Core.xml
-D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\es\DevExpress.XtraBars.v19.2.resources.dll
-D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ja\DevExpress.XtraEditors.v19.2.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -19,6 +15,7 @@ D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.CodeParser.v19.2.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.Data.v19.2.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.DataAccess.v19.2.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.Office.v19.2.Core.dll
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.Pdf.v19.2.Core.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.PivotGrid.v19.2.Core.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.Printing.v19.2.Core.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.RichEdit.v19.2.Core.dll
@@ -36,6 +33,8 @@ D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.XtraLayout.v19.2.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.XtraPrinting.v19.2.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.XtraReports.v19.2.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.XtraReports.v19.2.Extensions.dll
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.XtraScheduler.v19.2.Core.dll
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.XtraScheduler.v19.2.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\Microsoft.ReportViewer.Common.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\Microsoft.ReportViewer.Design.dll
@@ -78,6 +77,7 @@ D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.DataAccess.v19.2.xml
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.Office.v19.2.Core.xml
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.Pdf.v19.2.Core.xml
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.PivotGrid.v19.2.Core.xml
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.Printing.v19.2.Core.xml
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.RichEdit.v19.2.Core.xml
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.Utils.v19.2.xml
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.Utils.v19.2.UI.xml
@@ -92,6 +92,8 @@ D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.XtraLayout.v19.2.xml
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.XtraPrinting.v19.2.xml
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.XtraReports.v19.2.xml
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.XtraReports.v19.2.Extensions.xml
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.XtraScheduler.v19.2.xml
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.XtraScheduler.v19.2.Core.xml
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.XtraTreeList.v19.2.xml
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.XtraRichEdit.v19.2.xml
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\DevExpress.XtraVerticalGrid.v19.2.xml
@@ -142,6 +144,7 @@ D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\es\DevExpress.Xpo.v19.2.resources.
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ja\DevExpress.Xpo.v19.2.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ru\DevExpress.Xpo.v19.2.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\de\DevExpress.XtraBars.v19.2.resources.dll
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\es\DevExpress.XtraBars.v19.2.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ja\DevExpress.XtraBars.v19.2.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ru\DevExpress.XtraBars.v19.2.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\de\DevExpress.Sparkline.v19.2.Core.resources.dll
@@ -154,6 +157,7 @@ D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ja\DevExpress.XtraCharts.v19.2.res
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ru\DevExpress.XtraCharts.v19.2.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\de\DevExpress.XtraEditors.v19.2.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\es\DevExpress.XtraEditors.v19.2.resources.dll
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ja\DevExpress.XtraEditors.v19.2.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ru\DevExpress.XtraEditors.v19.2.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\de\DevExpress.XtraGauges.v19.2.Core.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\es\DevExpress.XtraGauges.v19.2.Core.resources.dll
@@ -179,6 +183,14 @@ D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\de\DevExpress.XtraReports.v19.2.Ex
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\es\DevExpress.XtraReports.v19.2.Extensions.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ja\DevExpress.XtraReports.v19.2.Extensions.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ru\DevExpress.XtraReports.v19.2.Extensions.resources.dll
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\de\DevExpress.XtraScheduler.v19.2.resources.dll
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\es\DevExpress.XtraScheduler.v19.2.resources.dll
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ja\DevExpress.XtraScheduler.v19.2.resources.dll
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ru\DevExpress.XtraScheduler.v19.2.resources.dll
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\de\DevExpress.XtraScheduler.v19.2.Core.resources.dll
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\es\DevExpress.XtraScheduler.v19.2.Core.resources.dll
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ja\DevExpress.XtraScheduler.v19.2.Core.resources.dll
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ru\DevExpress.XtraScheduler.v19.2.Core.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\de\Microsoft.ReportViewer.Common.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\es\Microsoft.ReportViewer.Common.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\fr\Microsoft.ReportViewer.Common.resources.dll
@@ -251,6 +263,9 @@ D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\de\DevExpress.Diagram.v19.2.Core.r
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\es\DevExpress.Diagram.v19.2.Core.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ja\DevExpress.Diagram.v19.2.Core.resources.dll
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\bin\Debug\ru\DevExpress.Diagram.v19.2.Core.resources.dll
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.csproj.AssemblyReference.cache
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.Frpt_TongHopNhapXuat.resources
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.Report.Xrpt_HoatDongNhanVien.resources
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.FormChuyenChiNhanh.resources
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.FormDangNhap.resources
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.FormHoatDongNhanVien.resources
@@ -258,6 +273,7 @@ D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.FormMain.resources
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.FormNhanVien.resources
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.FormTaoTaiKhoan.resources
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.Properties.Resources.resources
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.Xrpt_TongHopNhapXuat.resources
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.csproj.GenerateResource.cache
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.exe.licenses
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.csproj.CoreCompileInputs.cache

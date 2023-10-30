@@ -83,7 +83,7 @@ namespace QLVT
                 this.btnHOANTAC.Enabled = false;
                 this.btnLAMMOI.Enabled = true;
                 this.btnTHOAT.Enabled = true;
-                this.btnChuyenChiNhanh.Enabled = false;
+                this.btnChuyenChiNhanh.Enabled = true;
 
                 this.panelNhapLieu.Enabled = false;
             }
@@ -101,7 +101,7 @@ namespace QLVT
                 this.btnHOANTAC.Enabled = false;
                 this.btnLAMMOI.Enabled = true;
                 this.btnTHOAT.Enabled = true;
-                this.btnChuyenChiNhanh.Enabled = true;
+                this.btnChuyenChiNhanh.Enabled = false;
 
                 this.panelNhapLieu.Enabled = true;
                 this.txtMANV.Enabled = false;
@@ -622,8 +622,6 @@ namespace QLVT
         }
         public void chuyenChiNhanh(String chiNhanh)
         {
-            //Console.WriteLine("Chi nhánh được chọn là " + chiNhanh);
-
             /*Step 1*/
             if (Program.server_name == chiNhanh)
             {

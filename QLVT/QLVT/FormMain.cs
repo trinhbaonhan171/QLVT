@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using QLVT.Report;
 namespace QLVT
 {
     public partial class FormMain : DevExpress.XtraBars.Ribbon.RibbonForm
@@ -19,7 +19,10 @@ namespace QLVT
 
             pageNhapXuat.Visible = false;
             pageBaoCao.Visible = false;
-            btnLapTaiKhoan.Enabled = true;
+            btnLapTaiKhoan.Enabled = false;
+            FormDangNhap form = new FormDangNhap();
+            form.MdiParent = this;
+            form.Show();
         }
         /************************************************************
          * CheckExists:
@@ -78,7 +81,7 @@ namespace QLVT
             else
             {
                 FormDangNhap form = new FormDangNhap();
-                //form.MdiParent = this;
+                form.MdiParent = this;
                 form.Show();
             }
         }
@@ -141,6 +144,36 @@ namespace QLVT
             else
             {
                 FormNhanVien form = new FormNhanVien();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void btnTongHopNhapXuat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(Frpt_TongHopNhapXuat));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                Frpt_TongHopNhapXuat form = new Frpt_TongHopNhapXuat();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void btnHoatDongNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(FormHoatDongNhanVien));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormHoatDongNhanVien form = new FormHoatDongNhanVien();
                 form.MdiParent = this;
                 form.Show();
             }
