@@ -9,20 +9,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace QLVT
+namespace QLVT.Report
 {
-    public partial class Frpt_TongHopNhapXuat : Form
+    public partial class Frpt_DonHangKhongPhieuNhap : Form
     {
-        public Frpt_TongHopNhapXuat()
+        private string chiNhanh = "";
+        public Frpt_DonHangKhongPhieuNhap()
         {
             InitializeComponent();
-        }
-
-        private void Frpt_TongHopNhapXuat_Load(object sender, EventArgs e)
-        {
-            dteTuNgay.DateTime = DateTime.Now;
-            dteToiNgay.DateTime = DateTime.Now;
-
             cmbChiNhanh.DataSource = Program.bds_dspm;/*sao chep bingding source tu form dang nhap*/
             cmbChiNhanh.DisplayMember = "TENCN";
             cmbChiNhanh.ValueMember = "TENSERVER";
@@ -33,10 +27,18 @@ namespace QLVT
             if (Program.mGroup == "CONGTY")
             {
                 cmbChiNhanh.Enabled = true;
-             
+
             }
             else
                 cmbChiNhanh.Enabled = false;
+        }
+        private void btnPreview_Click(object sender, EventArgs e)
+        {
+            Xrpt_DonHangKhongPhieuNhap rpt = new Xrpt_DonHangKhongPhieuNhap();
+            /*GAN TEN CHI NHANH CHO BAO CAO*/
+            rpt.lblChiNhanh.Text = chiNhanh.ToUpper();
+            ReportPrintTool printTool = new ReportPrintTool(rpt);
+            printTool.ShowPreviewDialog();
         }
 
         private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,25 +66,7 @@ namespace QLVT
             {
                 MessageBox.Show("Xảy ra lỗi kết nối với chi nhánh hiện tại", "Thông báo", MessageBoxButtons.OK);
             }
-        }
-
-        private void btnPreview_Click(object sender, EventArgs e)
-        {
-            DateTime fromDateTime = (DateTime)dteTuNgay.DateTime;
-            string fromDate = fromDateTime.ToString("MM-dd-yyyy");
-
-            DateTime toDateTime = (DateTime)dteToiNgay.DateTime;
-            string toDate = toDateTime.ToString("MM-dd-yyyy");
-
-            string chiNhanh = cmbChiNhanh.SelectedValue.ToString().Contains("1") ? "THỦ ĐỨC" : "BẾN THÀNH";
-
-
-
-            Xrpt_TongHopNhapXuat rpt = new Xrpt_TongHopNhapXuat(fromDateTime, toDateTime);
-            rpt.lblTieuDe.Text = "BẢNG TỔNG HỢP NHẬP XUẤT TỪ " + fromDate + " ĐẾN " + toDate;
-            rpt.lblChiNhanh.Text = chiNhanh;
-            ReportPrintTool printTool = new ReportPrintTool(rpt);
-            printTool.ShowPreviewDialog();
+            chiNhanh = cmbChiNhanh.SelectedValue.ToString().Contains("1") ? "THỦ ĐỨC" : "BẾN THÀNH";
         }
     }
 }

@@ -89,8 +89,27 @@ namespace QLVT
             string chiNhanh = cmbChiNhanh.SelectedValue.ToString().Contains("1") ? "THỦ ĐỨC" : "BẾN THÀNH";
 
             manv = cmbHoTen.SelectedValue.ToString();
+
+           
+
             Xrpt_HoatDongNhanVien rpt = new Xrpt_HoatDongNhanVien(manv,fromDateTime, toDateTime);
-          
+            rpt.lblMANV.Text = manv;
+            rpt.lblChiNhanh.Text = chiNhanh;
+
+            foreach (var item in bdsHoTenNV)
+            {
+                DataRowView rowView = (DataRowView)item;
+                if(manv == rowView["MANV"].ToString())
+                {
+                    rpt.lblHOTEN.Text = rowView["HOTEN"].ToString();
+                    rpt.lblDIACHI.Text = rowView["DIACHI"].ToString();
+                    rpt.lblNGAYSINH.Text = rowView["NGAYSINH"].ToString();
+                    rpt.lblPHAI.Text = rowView["PHAI"].ToString();
+                    rpt.lblSDT.Text = rowView["SDT"].ToString();
+                }    
+            }
+
+
             ReportPrintTool printTool = new ReportPrintTool(rpt);
             printTool.ShowPreviewDialog();
         }
@@ -106,5 +125,6 @@ namespace QLVT
 
             }
         }
+
     }
 }

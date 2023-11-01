@@ -57,7 +57,7 @@ namespace QLVT
             hOTENLabel.AutoSize = true;
             hOTENLabel.Location = new System.Drawing.Point(48, 99);
             hOTENLabel.Name = "hOTENLabel";
-            hOTENLabel.Size = new System.Drawing.Size(81, 22);
+            hOTENLabel.Size = new System.Drawing.Size(66, 19);
             hOTENLabel.TabIndex = 18;
             hOTENLabel.Text = "HỌ TÊN";
             // 
@@ -71,7 +71,7 @@ namespace QLVT
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteToiNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteToiNgay.Size = new System.Drawing.Size(159, 22);
+            this.dteToiNgay.Size = new System.Drawing.Size(159, 20);
             this.dteToiNgay.TabIndex = 17;
             // 
             // btnPreview
@@ -94,7 +94,7 @@ namespace QLVT
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteTuNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteTuNgay.Size = new System.Drawing.Size(173, 22);
+            this.dteTuNgay.Size = new System.Drawing.Size(173, 20);
             this.dteTuNgay.TabIndex = 15;
             // 
             // label3
@@ -102,7 +102,7 @@ namespace QLVT
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(373, 160);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 22);
+            this.label3.Size = new System.Drawing.Size(72, 19);
             this.label3.TabIndex = 14;
             this.label3.Text = "DATE TO";
             // 
@@ -111,7 +111,7 @@ namespace QLVT
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(23, 160);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 22);
+            this.label2.Size = new System.Drawing.Size(96, 19);
             this.label2.TabIndex = 13;
             this.label2.Text = "DATE FROM";
             // 
@@ -120,7 +120,7 @@ namespace QLVT
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(12, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 22);
+            this.label1.Size = new System.Drawing.Size(97, 19);
             this.label1.TabIndex = 12;
             this.label1.Text = "CHI NHÁNH";
             // 
@@ -129,7 +129,7 @@ namespace QLVT
             this.cmbChiNhanh.FormattingEnabled = true;
             this.cmbChiNhanh.Location = new System.Drawing.Point(149, 24);
             this.cmbChiNhanh.Name = "cmbChiNhanh";
-            this.cmbChiNhanh.Size = new System.Drawing.Size(408, 30);
+            this.cmbChiNhanh.Size = new System.Drawing.Size(408, 27);
             this.cmbChiNhanh.TabIndex = 11;
             this.cmbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cmbChiNhanh_SelectedIndexChanged);
             // 
@@ -174,15 +174,15 @@ namespace QLVT
             this.cmbHoTen.FormattingEnabled = true;
             this.cmbHoTen.Location = new System.Drawing.Point(149, 96);
             this.cmbHoTen.Name = "cmbHoTen";
-            this.cmbHoTen.Size = new System.Drawing.Size(408, 30);
+            this.cmbHoTen.Size = new System.Drawing.Size(408, 27);
             this.cmbHoTen.TabIndex = 20;
             this.cmbHoTen.ValueMember = "MANV";
             // 
             // FormHoatDongNhanVien
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1200, 269);
+            this.ClientSize = new System.Drawing.Size(820, 217);
             this.Controls.Add(this.cmbHoTen);
             this.Controls.Add(hOTENLabel);
             this.Controls.Add(this.dteToiNgay);
@@ -195,7 +195,7 @@ namespace QLVT
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormHoatDongNhanVien";
-            this.Text = "FormHoatDongNhanVien";
+            this.Text = "HOẠT ĐỘNG NHÂN VIÊN";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormHoatDongNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dteToiNgay.Properties.CalendarTimeProperties)).EndInit();

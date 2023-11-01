@@ -47,17 +47,16 @@ namespace QLVT
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(46, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(118, 22);
+            this.label1.Size = new System.Drawing.Size(97, 19);
             this.label1.TabIndex = 3;
             this.label1.Text = "CHI NHÁNH";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // cmbChiNhanh
             // 
             this.cmbChiNhanh.FormattingEnabled = true;
-            this.cmbChiNhanh.Location = new System.Drawing.Point(171, 27);
+            this.cmbChiNhanh.Location = new System.Drawing.Point(167, 27);
             this.cmbChiNhanh.Name = "cmbChiNhanh";
-            this.cmbChiNhanh.Size = new System.Drawing.Size(408, 30);
+            this.cmbChiNhanh.Size = new System.Drawing.Size(360, 27);
             this.cmbChiNhanh.TabIndex = 2;
             this.cmbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cmbChiNhanh_SelectedIndexChanged);
             // 
@@ -66,20 +65,18 @@ namespace QLVT
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(39, 104);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(120, 22);
+            this.label2.Size = new System.Drawing.Size(96, 19);
             this.label2.TabIndex = 5;
             this.label2.Text = "DATE FROM";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(432, 103);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(91, 22);
+            this.label3.Size = new System.Drawing.Size(72, 19);
             this.label3.TabIndex = 6;
             this.label3.Text = "DATE TO";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // dteTuNgay
             // 
@@ -91,9 +88,8 @@ namespace QLVT
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteTuNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteTuNgay.Size = new System.Drawing.Size(221, 22);
+            this.dteTuNgay.Size = new System.Drawing.Size(221, 20);
             this.dteTuNgay.TabIndex = 8;
-            this.dteTuNgay.EditValueChanged += new System.EventHandler(this.dteTuNgay_EditValueChanged);
             // 
             // btnPreview
             // 
@@ -115,13 +111,12 @@ namespace QLVT
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteToiNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteToiNgay.Size = new System.Drawing.Size(214, 22);
+            this.dteToiNgay.Size = new System.Drawing.Size(214, 20);
             this.dteToiNgay.TabIndex = 10;
-            this.dteToiNgay.EditValueChanged += new System.EventHandler(this.dteToiNgay_EditValueChanged);
             // 
             // Frpt_TongHopNhapXuat
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 175);
             this.Controls.Add(this.dteToiNgay);
@@ -134,7 +129,7 @@ namespace QLVT
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frpt_TongHopNhapXuat";
-            this.Text = "Frpt_TongHopNhapXuat";
+            this.Text = "TỔNG HỢP NHẬP XUẤT";
             this.Load += new System.EventHandler(this.Frpt_TongHopNhapXuat_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteTuNgay.Properties)).EndInit();

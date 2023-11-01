@@ -103,11 +103,35 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DS.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Report\FrptChiTietSLTGHangHoaNhapXuat.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\FrptChiTietSLTGHangHoaNhapXuat.Designer.cs">
+      <DependentUpon>FrptChiTietSLTGHangHoaNhapXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Frpt_DonHangKhongPhieuNhap.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Report\Frpt_DonHangKhongPhieuNhap.Designer.cs">
+      <DependentUpon>Frpt_DonHangKhongPhieuNhap.cs</DependentUpon>
+    </Compile>
     <Compile Include="Report\Frpt_TongHopNhapXuat.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Report\Frpt_TongHopNhapXuat.Designer.cs">
       <DependentUpon>Frpt_TongHopNhapXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\XrptChiTietSLTGHangHoaNhapXuat.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\XrptChiTietSLTGHangHoaNhapXuat.Designer.cs">
+      <DependentUpon>XrptChiTietSLTGHangHoaNhapXuat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Report\Xrpt_DonHangKhongPhieuNhap.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Report\Xrpt_DonHangKhongPhieuNhap.Designer.cs">
+      <DependentUpon>Xrpt_DonHangKhongPhieuNhap.cs</DependentUpon>
     </Compile>
     <Compile Include="Report\Xrpt_HoatDongNhanVien.cs">
       <SubType>Component</SubType>
@@ -165,8 +189,20 @@
     <Compile Include="Report\Xrpt_TongHopNhapXuat.Designer.cs">
       <DependentUpon>Xrpt_TongHopNhapXuat.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Report\FrptChiTietSLTGHangHoaNhapXuat.resx">
+      <DependentUpon>FrptChiTietSLTGHangHoaNhapXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Frpt_DonHangKhongPhieuNhap.resx">
+      <DependentUpon>Frpt_DonHangKhongPhieuNhap.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Report\Frpt_TongHopNhapXuat.resx">
       <DependentUpon>Frpt_TongHopNhapXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\XrptChiTietSLTGHangHoaNhapXuat.resx">
+      <DependentUpon>XrptChiTietSLTGHangHoaNhapXuat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Report\Xrpt_DonHangKhongPhieuNhap.resx">
+      <DependentUpon>Xrpt_DonHangKhongPhieuNhap.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report\Xrpt_HoatDongNhanVien.resx">
       <DependentUpon>Xrpt_HoatDongNhanVien.cs</DependentUpon>
