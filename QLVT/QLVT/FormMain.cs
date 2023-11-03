@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using DevExpress.XtraReports.UI;
 using QLVT.Report;
 namespace QLVT
 {
@@ -196,14 +197,30 @@ namespace QLVT
 
         private void btnDonHangKhongPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            Form f = this.CheckExists(typeof(Frpt_DonHangKhongPhieuNhap));
+            Xrpt_DonHangKhongPhieuNhap rpt = new Xrpt_DonHangKhongPhieuNhap();
+            /*GAN TEN CHI NHANH CHO BAO CAO*/
+            ReportPrintTool printTool = new ReportPrintTool(rpt);
+            printTool.ShowPreviewDialog();
+        }
+
+        private void btnDanhSachVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Xrpt_DSHangHoa rpt = new Xrpt_DSHangHoa();
+            /*GAN TEN CHI NHANH CHO BAO CAO*/
+            ReportPrintTool printTool = new ReportPrintTool(rpt);
+            printTool.ShowPreviewDialog();
+        }
+
+        private void btnDanhSachNhanVien_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(Frpt_DSNhanVien));
             if (f != null)
             {
                 f.Activate();
             }
             else
             {
-                Frpt_DonHangKhongPhieuNhap form = new Frpt_DonHangKhongPhieuNhap();
+                Frpt_DSNhanVien form = new Frpt_DSNhanVien();
                 form.MdiParent = this;
                 form.Show();
             }

@@ -29,7 +29,18 @@ namespace QLVT
             /*sao chep bingding source tu form dang nhap*/
             cmbChuyenChiNhanh.DisplayMember = "TENCN";
             cmbChuyenChiNhanh.ValueMember = "TENSERVER";
-            cmbChuyenChiNhanh.SelectedIndex = Program.mChiNhanh;  
+            cmbChuyenChiNhanh.SelectedIndex = Program.mChiNhanh;
+            /*string tenserver = cmbChuyenChiNhanh.SelectedValue.ToString();
+            foreach (var item in bds_chuyenChiNhanh)
+            {
+                DataRowView rowView = (DataRowView)item;
+                if (tenserver == rowView["TENSERVER"].ToString())
+                {
+                   bds_chuyenChiNhanh.Remove(item);
+                }
+            }*/
+
+
         }
         private Form CheckExists(Type ftype)
         {
@@ -61,5 +72,6 @@ namespace QLVT
             }
             this.Dispose();
         }
+
     }
 }

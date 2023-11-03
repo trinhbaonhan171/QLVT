@@ -45,7 +45,7 @@ namespace QLVT
             tENCNLabel.AutoSize = true;
             tENCNLabel.Location = new System.Drawing.Point(66, 145);
             tENCNLabel.Name = "tENCNLabel";
-            tENCNLabel.Size = new System.Drawing.Size(118, 22);
+            tENCNLabel.Size = new System.Drawing.Size(97, 19);
             tENCNLabel.TabIndex = 9;
             tENCNLabel.Text = "CHI NHÁNH";
             // 
@@ -68,7 +68,7 @@ namespace QLVT
             this.cmbChuyenChiNhanh.FormattingEnabled = true;
             this.cmbChuyenChiNhanh.Location = new System.Drawing.Point(185, 142);
             this.cmbChuyenChiNhanh.Name = "cmbChuyenChiNhanh";
-            this.cmbChuyenChiNhanh.Size = new System.Drawing.Size(361, 30);
+            this.cmbChuyenChiNhanh.Size = new System.Drawing.Size(361, 27);
             this.cmbChuyenChiNhanh.TabIndex = 19;
             // 
             // btnXacNhan
@@ -88,9 +88,9 @@ namespace QLVT
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.SystemColors.Control;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(75, 26);
+            this.label3.Location = new System.Drawing.Point(130, 22);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(527, 55);
+            this.label3.Size = new System.Drawing.Size(416, 43);
             this.label3.TabIndex = 17;
             this.label3.Text = "CHUYỂN CHI NHÁNH";
             // 
@@ -108,7 +108,7 @@ namespace QLVT
             // 
             // FormChuyenChiNhanh
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(705, 326);
             this.Controls.Add(this.groupBox1);

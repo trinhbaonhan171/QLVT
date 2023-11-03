@@ -214,6 +214,7 @@ namespace QLVT
             this.btnDanhSachNhanVien.Id = 27;
             this.btnDanhSachNhanVien.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDanhSachNhanVien.ImageOptions.SvgImage")));
             this.btnDanhSachNhanVien.Name = "btnDanhSachNhanVien";
+            this.btnDanhSachNhanVien.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDanhSachNhanVien_ItemClick);
             // 
             // btnDanhSachVatTu
             // 
@@ -221,6 +222,7 @@ namespace QLVT
             this.btnDanhSachVatTu.Id = 28;
             this.btnDanhSachVatTu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnDanhSachVatTu.ImageOptions.SvgImage")));
             this.btnDanhSachVatTu.Name = "btnDanhSachVatTu";
+            this.btnDanhSachVatTu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnDanhSachVatTu_ItemClick);
             // 
             // btnChiTietNhapXuat
             // 

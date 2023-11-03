@@ -226,9 +226,9 @@ namespace QLVT
                 return false;
             }
             
-            if (Regex.IsMatch(txtHO.Text, @"^[A-Za-z\s]+$") == false)
+            if (Regex.IsMatch(txtHO.Text, @"^[\p{L}\s]+$") == false)
             {
-                MessageBox.Show("Họ của nhân viên chỉ gồm chữ cái không dấu", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Họ của nhân viên chỉ gồm chữ cái", "Thông báo", MessageBoxButtons.OK);
                 txtHO.Focus();
                 return false;
             }
@@ -246,9 +246,9 @@ namespace QLVT
                 return false;
             }
 
-            if (Regex.IsMatch(txtTEN.Text, @"^[A-Za-z\s]+$") == false)
+            if (Regex.IsMatch(txtTEN.Text, @"^[\p{L}\s]+$") == false)
             {
-                MessageBox.Show("Tên của nhân viên chỉ gồm chữ cái không dấu", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Tên của nhân viên chỉ gồm chữ cái", "Thông báo", MessageBoxButtons.OK);
                 txtTEN.Focus();
                 return false;
             }

@@ -284,3 +284,6 @@ D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.Report.FrptChiTietSLTGHangHoa
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.Report.XrptChiTietSLTGHangHoaNhapXuat.resources
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.Report.Frpt_DonHangKhongPhieuNhap.resources
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.Report.Xrpt_DonHangKhongPhieuNhap.resources
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.Report.Xrpt_DSHangHoa.resources
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.Report.Frpt_DSNhanVien.resources
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.Report.Xrpt_DSNhanVien.resources

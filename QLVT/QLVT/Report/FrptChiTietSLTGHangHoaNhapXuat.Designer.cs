@@ -62,7 +62,7 @@ namespace QLVT.Report
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteToiNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteToiNgay.Size = new System.Drawing.Size(238, 20);
+            this.dteToiNgay.Size = new System.Drawing.Size(225, 20);
             this.dteToiNgay.TabIndex = 27;
             // 
             // btnPreview
@@ -86,7 +86,7 @@ namespace QLVT.Report
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteTuNgay.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dteTuNgay.Size = new System.Drawing.Size(260, 20);
+            this.dteTuNgay.Size = new System.Drawing.Size(263, 20);
             this.dteTuNgay.TabIndex = 25;
             // 
             // label3
@@ -116,7 +116,7 @@ namespace QLVT.Report
             this.cmbLoaiPhieu.FormattingEnabled = true;
             this.cmbLoaiPhieu.Location = new System.Drawing.Point(119, 12);
             this.cmbLoaiPhieu.Name = "cmbLoaiPhieu";
-            this.cmbLoaiPhieu.Size = new System.Drawing.Size(298, 27);
+            this.cmbLoaiPhieu.Size = new System.Drawing.Size(263, 27);
             this.cmbLoaiPhieu.TabIndex = 29;
             this.cmbLoaiPhieu.ValueMember = "MANV";
             // 
@@ -124,7 +124,7 @@ namespace QLVT.Report
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1102, 147);
+            this.ClientSize = new System.Drawing.Size(951, 147);
             this.Controls.Add(this.cmbLoaiPhieu);
             this.Controls.Add(label5);
             this.Controls.Add(this.dteToiNgay);

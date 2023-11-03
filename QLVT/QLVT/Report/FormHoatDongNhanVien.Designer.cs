@@ -126,6 +126,7 @@ namespace QLVT
             // 
             // cmbChiNhanh
             // 
+            this.cmbChiNhanh.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbChiNhanh.FormattingEnabled = true;
             this.cmbChiNhanh.Location = new System.Drawing.Point(149, 24);
             this.cmbChiNhanh.Name = "cmbChiNhanh";

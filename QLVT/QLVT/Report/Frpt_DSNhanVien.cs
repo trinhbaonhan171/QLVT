@@ -11,9 +11,10 @@ using System.Windows.Forms;
 
 namespace QLVT.Report
 {
-    public partial class Frpt_DonHangKhongPhieuNhap : Form
+    public partial class Frpt_DSNhanVien : Form
     {
-        public Frpt_DonHangKhongPhieuNhap()
+        private string chiNhanh = "";
+        public Frpt_DSNhanVien()
         {
             InitializeComponent();
             cmbChiNhanh.DataSource = Program.bds_dspm;/*sao chep bingding source tu form dang nhap*/
@@ -30,13 +31,6 @@ namespace QLVT.Report
             }
             else
                 cmbChiNhanh.Enabled = false;
-        }
-        private void btnPreview_Click(object sender, EventArgs e)
-        {
-            Xrpt_DonHangKhongPhieuNhap rpt = new Xrpt_DonHangKhongPhieuNhap();
-            /*GAN TEN CHI NHANH CHO BAO CAO*/
-            ReportPrintTool printTool = new ReportPrintTool(rpt);
-            printTool.ShowPreviewDialog();
         }
 
         private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,6 +58,16 @@ namespace QLVT.Report
             {
                 MessageBox.Show("Xảy ra lỗi kết nối với chi nhánh hiện tại", "Thông báo", MessageBoxButtons.OK);
             }
+        }
+
+        private void btnPreview_Click(object sender, EventArgs e)
+        {
+            chiNhanh = cmbChiNhanh.SelectedValue.ToString().Contains("1") ? "THỦ ĐỨC" : "BẾN THÀNH";
+            Xrpt_DSNhanVien rpt = new Xrpt_DSNhanVien();
+            rpt.lblChiNhanh.Text = chiNhanh;
+            /*GAN TEN CHI NHANH CHO BAO CAO*/
+            ReportPrintTool printTool = new ReportPrintTool(rpt);
+            printTool.ShowPreviewDialog();
         }
     }
 }
