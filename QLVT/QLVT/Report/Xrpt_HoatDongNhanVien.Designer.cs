@@ -99,6 +99,8 @@ namespace QLVT.Report
             this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
             this.GroupHeader1 = new DevExpress.XtraReports.UI.GroupHeaderBand();
             this.SubBand1 = new DevExpress.XtraReports.UI.SubBand();
+            this.xrLabel9 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblNgayTao = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table3)).BeginInit();
@@ -848,7 +850,10 @@ namespace QLVT.Report
             // PageHeader
             // 
             this.PageHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel9,
+            this.lblNgayTao,
             this.xrLabel1});
+            this.PageHeader.HeightF = 100F;
             this.PageHeader.Name = "PageHeader";
             // 
             // xrLabel1
@@ -885,6 +890,28 @@ namespace QLVT.Report
             this.table2});
             this.SubBand1.HeightF = 38.16665F;
             this.SubBand1.Name = "SubBand1";
+            // 
+            // xrLabel9
+            // 
+            this.xrLabel9.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.xrLabel9.LocationFloat = new DevExpress.Utils.PointFloat(480.3299F, 77.00002F);
+            this.xrLabel9.Multiline = true;
+            this.xrLabel9.Name = "xrLabel9";
+            this.xrLabel9.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel9.SizeF = new System.Drawing.SizeF(72.91669F, 23F);
+            this.xrLabel9.StylePriority.UseFont = false;
+            this.xrLabel9.Text = "Ngày tạo: ";
+            // 
+            // lblNgayTao
+            // 
+            this.lblNgayTao.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lblNgayTao.LocationFloat = new DevExpress.Utils.PointFloat(553.2466F, 77.00002F);
+            this.lblNgayTao.Multiline = true;
+            this.lblNgayTao.Name = "lblNgayTao";
+            this.lblNgayTao.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblNgayTao.SizeF = new System.Drawing.SizeF(117.5868F, 23F);
+            this.lblNgayTao.StylePriority.UseFont = false;
+            this.lblNgayTao.Text = "xrLabel1";
             // 
             // Xrpt_HoatDongNhanVien
             // 
@@ -984,5 +1011,7 @@ namespace QLVT.Report
         private DevExpress.XtraReports.UI.GroupHeaderBand GroupHeader1;
         private DevExpress.XtraReports.UI.SubBand SubBand1;
         private DevExpress.XtraReports.UI.XRLabel xrLabel8;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel9;
+        public DevExpress.XtraReports.UI.XRLabel lblNgayTao;
     }
 }

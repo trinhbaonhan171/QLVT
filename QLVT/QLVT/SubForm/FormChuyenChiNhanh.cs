@@ -30,16 +30,20 @@ namespace QLVT
             cmbChuyenChiNhanh.DisplayMember = "TENCN";
             cmbChuyenChiNhanh.ValueMember = "TENSERVER";
             cmbChuyenChiNhanh.SelectedIndex = Program.mChiNhanh;
-            /*string tenserver = cmbChuyenChiNhanh.SelectedValue.ToString();
-            foreach (var item in bds_chuyenChiNhanh)
+            if(Program.mChiNhanh_cnn != Program.mChiNhanh)
             {
-                DataRowView rowView = (DataRowView)item;
-                if (tenserver == rowView["TENSERVER"].ToString())
+                cmbChuyenChiNhanh.SelectedIndex = Program.mChiNhanh_cnn;
+            }    
+            for (int i = 0; i < cmbChuyenChiNhanh.Items.Count; i++)
+            {
+                if (i == cmbChuyenChiNhanh.SelectedIndex)
                 {
-                   bds_chuyenChiNhanh.Remove(item);
+                    // Đặt mặc định hiển thị của ComboBox thành giá trị còn lại
+                    cmbChuyenChiNhanh.SelectedIndex = 1 - i;
+                    break; 
                 }
-            }*/
-
+            }
+            cmbChuyenChiNhanh.Enabled = false;
 
         }
         private Form CheckExists(Type ftype)
@@ -72,6 +76,5 @@ namespace QLVT
             }
             this.Dispose();
         }
-
     }
 }

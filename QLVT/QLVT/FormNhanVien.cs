@@ -111,6 +111,8 @@ namespace QLVT
 
         private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbChiNhanh.SelectedValue == null)
+                return;
              /*Neu combobox khong co so lieu thi ket thuc luon*/
             if (cmbChiNhanh.SelectedValue.ToString() == "System.Data.DataRowView")
                 return;
@@ -122,6 +124,7 @@ namespace QLVT
             {
                 Program.mlogin = Program.remoteLogin;
                 Program.password = Program.remotePassword;
+                Program.mChiNhanh_cnn = cmbChiNhanh.SelectedIndex;
             }
             /*Neu chon trung voi chi nhanh dang dang nhap o formDangNhap*/
             else
@@ -623,14 +626,11 @@ namespace QLVT
         public void chuyenChiNhanh(String chiNhanh)
         {
             /*Step 1*/
-            if (Program.server_name == chiNhanh)
+            /*if (Program.server_name == chiNhanh)
             {
                 MessageBox.Show("Hãy chọn chi nhánh khác chi nhánh bạn đang đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
-            }
-
-
-
+            }*/
             /*Step 2*/
             String maChiNhanhHienTai = "";
             String maChiNhanhMoi = "";

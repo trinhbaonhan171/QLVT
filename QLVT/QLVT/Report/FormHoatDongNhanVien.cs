@@ -48,6 +48,8 @@ namespace QLVT
 
         private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbChiNhanh.SelectedValue == null)
+                return;
             /*Neu combobox khong co so lieu thi ket thuc luon*/
             if (cmbChiNhanh.SelectedValue.ToString() == "System.Data.DataRowView")
                 return;
@@ -81,16 +83,17 @@ namespace QLVT
         private void btnPreview_Click(object sender, EventArgs e)
         {
             DateTime fromDateTime = (DateTime)dteTuNgay.DateTime;
-            string fromDate = fromDateTime.ToString("MM-dd-yyyy");
+            string fromDate = fromDateTime.ToString("dd-MM-yyyy");
 
             DateTime toDateTime = (DateTime)dteToiNgay.DateTime;
-            string toDate = toDateTime.ToString("MM-dd-yyyy");
+            string toDate = toDateTime.ToString("dd-MM-yyyy");
 
             string chiNhanh = cmbChiNhanh.SelectedValue.ToString().Contains("1") ? "THỦ ĐỨC" : "BẾN THÀNH";
 
             manv = cmbHoTen.SelectedValue.ToString();
 
-           
+            DateTime ngayHienTai = DateTime.Now;
+            string toDay = ngayHienTai.ToString("dd/MM/yyyy");
 
             Xrpt_HoatDongNhanVien rpt = new Xrpt_HoatDongNhanVien(manv,fromDateTime, toDateTime);
             rpt.lblMANV.Text = manv;
@@ -109,7 +112,7 @@ namespace QLVT
                 }    
             }
 
-
+            rpt.lblNgayTao.Text = toDay;
             ReportPrintTool printTool = new ReportPrintTool(rpt);
             printTool.ShowPreviewDialog();
         }

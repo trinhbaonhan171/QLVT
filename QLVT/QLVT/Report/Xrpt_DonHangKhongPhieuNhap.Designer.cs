@@ -64,6 +64,10 @@ namespace QLVT.Report
             this.tableCell12 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell13 = new DevExpress.XtraReports.UI.XRTableCell();
             this.tableCell14 = new DevExpress.XtraReports.UI.XRTableCell();
+            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblNgayTao = new DevExpress.XtraReports.UI.XRLabel();
+            this.lblNhanVien = new DevExpress.XtraReports.UI.XRLabel();
+            this.xrLabel2 = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this.table1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
@@ -140,7 +144,7 @@ namespace QLVT.Report
             this.BottomMargin.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
             this.pageInfo1,
             this.pageInfo2});
-            this.BottomMargin.HeightF = 37.54165F;
+            this.BottomMargin.HeightF = 234.9583F;
             this.BottomMargin.Name = "BottomMargin";
             // 
             // pageInfo1
@@ -163,8 +167,12 @@ namespace QLVT.Report
             // ReportHeader
             // 
             this.ReportHeader.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.xrLabel1,
+            this.lblNgayTao,
+            this.lblNhanVien,
+            this.xrLabel2,
             this.label1});
-            this.ReportHeader.HeightF = 45.41667F;
+            this.ReportHeader.HeightF = 69.37501F;
             this.ReportHeader.Name = "ReportHeader";
             // 
             // label1
@@ -484,6 +492,50 @@ namespace QLVT.Report
             this.tableCell14.TextFormatString = "{0:#,#}";
             this.tableCell14.Weight = 0.13988638070913462D;
             // 
+            // xrLabel1
+            // 
+            this.xrLabel1.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(459.4965F, 46.37501F);
+            this.xrLabel1.Multiline = true;
+            this.xrLabel1.Name = "xrLabel1";
+            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel1.SizeF = new System.Drawing.SizeF(72.91669F, 23F);
+            this.xrLabel1.StylePriority.UseFont = false;
+            this.xrLabel1.Text = "Ngày tạo: ";
+            // 
+            // lblNgayTao
+            // 
+            this.lblNgayTao.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lblNgayTao.LocationFloat = new DevExpress.Utils.PointFloat(532.4132F, 46.37501F);
+            this.lblNgayTao.Multiline = true;
+            this.lblNgayTao.Name = "lblNgayTao";
+            this.lblNgayTao.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblNgayTao.SizeF = new System.Drawing.SizeF(117.5868F, 23F);
+            this.lblNgayTao.StylePriority.UseFont = false;
+            this.lblNgayTao.Text = "xrLabel1";
+            // 
+            // lblNhanVien
+            // 
+            this.lblNhanVien.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.lblNhanVien.LocationFloat = new DevExpress.Utils.PointFloat(78.125F, 46.37501F);
+            this.lblNhanVien.Multiline = true;
+            this.lblNhanVien.Name = "lblNhanVien";
+            this.lblNhanVien.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lblNhanVien.SizeF = new System.Drawing.SizeF(169.7917F, 23F);
+            this.lblNhanVien.StylePriority.UseFont = false;
+            this.lblNhanVien.Text = "xrLabel1";
+            // 
+            // xrLabel2
+            // 
+            this.xrLabel2.Font = new System.Drawing.Font("Times New Roman", 12F);
+            this.xrLabel2.LocationFloat = new DevExpress.Utils.PointFloat(0F, 46.37501F);
+            this.xrLabel2.Multiline = true;
+            this.xrLabel2.Name = "xrLabel2";
+            this.xrLabel2.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.xrLabel2.SizeF = new System.Drawing.SizeF(78.125F, 23F);
+            this.xrLabel2.StylePriority.UseFont = false;
+            this.xrLabel2.Text = "Nhân viên: ";
+            // 
             // Xrpt_DonHangKhongPhieuNhap
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
@@ -497,7 +549,7 @@ namespace QLVT.Report
             this.DataMember = "sp_DonHangKhongPhieuNhap";
             this.DataSource = this.sqlDataSource1;
             this.Font = new System.Drawing.Font("Arial", 9.75F);
-            this.Margins = new System.Drawing.Printing.Margins(100, 100, 47, 38);
+            this.Margins = new System.Drawing.Printing.Margins(100, 100, 47, 235);
             this.StyleSheet.AddRange(new DevExpress.XtraReports.UI.XRControlStyle[] {
             this.Title,
             this.DetailCaption1,
@@ -545,5 +597,9 @@ namespace QLVT.Report
         private DevExpress.XtraReports.UI.XRTableCell tableCell12;
         private DevExpress.XtraReports.UI.XRTableCell tableCell13;
         private DevExpress.XtraReports.UI.XRTableCell tableCell14;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel1;
+        public DevExpress.XtraReports.UI.XRLabel lblNgayTao;
+        public DevExpress.XtraReports.UI.XRLabel lblNhanVien;
+        private DevExpress.XtraReports.UI.XRLabel xrLabel2;
     }
 }

@@ -197,7 +197,12 @@ namespace QLVT
 
         private void btnDonHangKhongPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DateTime ngayHienTai = DateTime.Now;
+            string toDay = ngayHienTai.ToString("dd/MM/yyyy");
             Xrpt_DonHangKhongPhieuNhap rpt = new Xrpt_DonHangKhongPhieuNhap();
+            rpt.lblNgayTao.Text = toDay;
+            rpt.lblNhanVien.Text = Program.mHoTen;
+
             /*GAN TEN CHI NHANH CHO BAO CAO*/
             ReportPrintTool printTool = new ReportPrintTool(rpt);
             printTool.ShowPreviewDialog();
@@ -205,7 +210,11 @@ namespace QLVT
 
         private void btnDanhSachVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            DateTime ngayHienTai = DateTime.Now;
+            string toDay = ngayHienTai.ToString("dd/MM/yyyy");
             Xrpt_DSHangHoa rpt = new Xrpt_DSHangHoa();
+            rpt.lblNgayTao.Text = toDay;
+            rpt.lblNhanVien.Text = Program.mHoTen;
             /*GAN TEN CHI NHANH CHO BAO CAO*/
             ReportPrintTool printTool = new ReportPrintTool(rpt);
             printTool.ShowPreviewDialog();

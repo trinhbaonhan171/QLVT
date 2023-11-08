@@ -35,6 +35,8 @@ namespace QLVT.Report
 
         private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbChiNhanh.SelectedValue == null)
+                return;
             /*Neu combobox khong co so lieu thi ket thuc luon*/
             if (cmbChiNhanh.SelectedValue.ToString() == "System.Data.DataRowView")
                 return;
@@ -62,9 +64,14 @@ namespace QLVT.Report
 
         private void btnPreview_Click(object sender, EventArgs e)
         {
+            DateTime ngayHienTai = DateTime.Now;
+            string toDay = ngayHienTai.ToString("dd/MM/yyyy");
+
             chiNhanh = cmbChiNhanh.SelectedValue.ToString().Contains("1") ? "THỦ ĐỨC" : "BẾN THÀNH";
             Xrpt_DSNhanVien rpt = new Xrpt_DSNhanVien();
             rpt.lblChiNhanh.Text = chiNhanh;
+            rpt.lblNgayTao.Text = toDay;
+            rpt.lblNhanVien.Text = Program.mHoTen;
             /*GAN TEN CHI NHANH CHO BAO CAO*/
             ReportPrintTool printTool = new ReportPrintTool(rpt);
             printTool.ShowPreviewDialog();

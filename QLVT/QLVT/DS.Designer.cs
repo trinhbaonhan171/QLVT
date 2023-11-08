@@ -60,41 +60,41 @@ namespace QLVT {
         
         private sp_DSNhanVienDataTable tablesp_DSNhanVien;
         
-        private global::System.Data.DataRelation relationFK__CT_DONDH__MADDH__48CFD27E;
-        
         private global::System.Data.DataRelation relationFK__CT_DONDH__MAHH__49C3F6B7;
         
-        private global::System.Data.DataRelation relationFK__CT_HOADON__MAHH__5165187F;
+        private global::System.Data.DataRelation relationFK__CT_DONDH__MADDH__48CFD27E;
         
         private global::System.Data.DataRelation relationFK__CT_HOADON__SOHD__5070F446;
         
-        private global::System.Data.DataRelation relationFK__CT_PHIEUNH__MAHH__4D94879B;
+        private global::System.Data.DataRelation relationFK__CT_HOADON__MAHH__5165187F;
         
         private global::System.Data.DataRelation relationFK__CT_PHIEUNH__SOPN__4CA06362;
         
-        private global::System.Data.DataRelation relationFK__DONDH__MANV__35BCFE0A;
-        
-        private global::System.Data.DataRelation relationFK_DONDH_KHO;
+        private global::System.Data.DataRelation relationFK__CT_PHIEUNH__MAHH__4D94879B;
         
         private global::System.Data.DataRelation relationFK__DONDH__MANCC__34C8D9D1;
         
+        private global::System.Data.DataRelation relationFK_DONDH_KHO;
+        
+        private global::System.Data.DataRelation relationFK__DONDH__MANV__35BCFE0A;
+        
         private global::System.Data.DataRelation relationFK__HANGHOA__MALHH__2F10007B;
         
-        private global::System.Data.DataRelation relationFK__HOADON__MAKH__45F365D3;
+        private global::System.Data.DataRelation relationFK__HOADON__MAKHO__440B1D61;
         
         private global::System.Data.DataRelation relationFK__HOADON__MANV__44FF419A;
         
-        private global::System.Data.DataRelation relationFK__HOADON__MAKHO__440B1D61;
+        private global::System.Data.DataRelation relationFK__HOADON__MAKH__45F365D3;
         
         private global::System.Data.DataRelation relationFK__KHO__MACN__398D8EEE;
         
         private global::System.Data.DataRelation relationFK__NHANVIEN__MACN__286302EC;
         
-        private global::System.Data.DataRelation relationFK__PHIEUNHAP__MADDH__3E52440B;
+        private global::System.Data.DataRelation relationFK__PHIEUNHAP__MANV__3D5E1FD2;
         
         private global::System.Data.DataRelation relationFK__PHIEUNHAP__MAKHO__3C69FB99;
         
-        private global::System.Data.DataRelation relationFK__PHIEUNHAP__MANV__3D5E1FD2;
+        private global::System.Data.DataRelation relationFK__PHIEUNHAP__MADDH__3E52440B;
         
         private global::System.Data.DataRelation relationFK__DONDH__MANV__35BCFE0A2;
         
@@ -644,24 +644,24 @@ namespace QLVT {
                     this.tablesp_DSNhanVien.InitVars();
                 }
             }
-            this.relationFK__CT_DONDH__MADDH__48CFD27E = this.Relations["FK__CT_DONDH__MADDH__48CFD27E"];
             this.relationFK__CT_DONDH__MAHH__49C3F6B7 = this.Relations["FK__CT_DONDH__MAHH__49C3F6B7"];
-            this.relationFK__CT_HOADON__MAHH__5165187F = this.Relations["FK__CT_HOADON__MAHH__5165187F"];
+            this.relationFK__CT_DONDH__MADDH__48CFD27E = this.Relations["FK__CT_DONDH__MADDH__48CFD27E"];
             this.relationFK__CT_HOADON__SOHD__5070F446 = this.Relations["FK__CT_HOADON__SOHD__5070F446"];
-            this.relationFK__CT_PHIEUNH__MAHH__4D94879B = this.Relations["FK__CT_PHIEUNH__MAHH__4D94879B"];
+            this.relationFK__CT_HOADON__MAHH__5165187F = this.Relations["FK__CT_HOADON__MAHH__5165187F"];
             this.relationFK__CT_PHIEUNH__SOPN__4CA06362 = this.Relations["FK__CT_PHIEUNH__SOPN__4CA06362"];
-            this.relationFK__DONDH__MANV__35BCFE0A = this.Relations["FK__DONDH__MANV__35BCFE0A"];
-            this.relationFK_DONDH_KHO = this.Relations["FK_DONDH_KHO"];
+            this.relationFK__CT_PHIEUNH__MAHH__4D94879B = this.Relations["FK__CT_PHIEUNH__MAHH__4D94879B"];
             this.relationFK__DONDH__MANCC__34C8D9D1 = this.Relations["FK__DONDH__MANCC__34C8D9D1"];
+            this.relationFK_DONDH_KHO = this.Relations["FK_DONDH_KHO"];
+            this.relationFK__DONDH__MANV__35BCFE0A = this.Relations["FK__DONDH__MANV__35BCFE0A"];
             this.relationFK__HANGHOA__MALHH__2F10007B = this.Relations["FK__HANGHOA__MALHH__2F10007B"];
-            this.relationFK__HOADON__MAKH__45F365D3 = this.Relations["FK__HOADON__MAKH__45F365D3"];
-            this.relationFK__HOADON__MANV__44FF419A = this.Relations["FK__HOADON__MANV__44FF419A"];
             this.relationFK__HOADON__MAKHO__440B1D61 = this.Relations["FK__HOADON__MAKHO__440B1D61"];
+            this.relationFK__HOADON__MANV__44FF419A = this.Relations["FK__HOADON__MANV__44FF419A"];
+            this.relationFK__HOADON__MAKH__45F365D3 = this.Relations["FK__HOADON__MAKH__45F365D3"];
             this.relationFK__KHO__MACN__398D8EEE = this.Relations["FK__KHO__MACN__398D8EEE"];
             this.relationFK__NHANVIEN__MACN__286302EC = this.Relations["FK__NHANVIEN__MACN__286302EC"];
-            this.relationFK__PHIEUNHAP__MADDH__3E52440B = this.Relations["FK__PHIEUNHAP__MADDH__3E52440B"];
-            this.relationFK__PHIEUNHAP__MAKHO__3C69FB99 = this.Relations["FK__PHIEUNHAP__MAKHO__3C69FB99"];
             this.relationFK__PHIEUNHAP__MANV__3D5E1FD2 = this.Relations["FK__PHIEUNHAP__MANV__3D5E1FD2"];
+            this.relationFK__PHIEUNHAP__MAKHO__3C69FB99 = this.Relations["FK__PHIEUNHAP__MAKHO__3C69FB99"];
+            this.relationFK__PHIEUNHAP__MADDH__3E52440B = this.Relations["FK__PHIEUNHAP__MADDH__3E52440B"];
             this.relationFK__DONDH__MANV__35BCFE0A2 = this.Relations["FK__DONDH__MANV__35BCFE0A2"];
             this.relationFK__HOADON__MANV__44FF419A2 = this.Relations["FK__HOADON__MANV__44FF419A2"];
             this.relationFK__PHIEUNHAP__MANV__3D5E1FD22 = this.Relations["FK__PHIEUNHAP__MANV__3D5E1FD22"];
@@ -712,13 +712,6 @@ namespace QLVT {
             this.tablesp_DSNhanVien = new sp_DSNhanVienDataTable();
             base.Tables.Add(this.tablesp_DSNhanVien);
             global::System.Data.ForeignKeyConstraint fkc;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK__CT_DONDH__MADDH__48CFD27E", new global::System.Data.DataColumn[] {
-                        this.tableDONDH.MADDHColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCT_DONDH.MADDHColumn});
-            this.tableCT_DONDH.Constraints.Add(fkc);
-            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
-            fkc.DeleteRule = global::System.Data.Rule.None;
-            fkc.UpdateRule = global::System.Data.Rule.Cascade;
             fkc = new global::System.Data.ForeignKeyConstraint("FK__CT_DONDH__MAHH__49C3F6B7", new global::System.Data.DataColumn[] {
                         this.tableHANGHOA.MAHHColumn}, new global::System.Data.DataColumn[] {
                         this.tableCT_DONDH.MAHHColumn});
@@ -726,10 +719,10 @@ namespace QLVT {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK__CT_HOADON__MAHH__5165187F", new global::System.Data.DataColumn[] {
-                        this.tableHANGHOA.MAHHColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCT_HOADON.MAHHColumn});
-            this.tableCT_HOADON.Constraints.Add(fkc);
+            fkc = new global::System.Data.ForeignKeyConstraint("FK__CT_DONDH__MADDH__48CFD27E", new global::System.Data.DataColumn[] {
+                        this.tableDONDH.MADDHColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCT_DONDH.MADDHColumn});
+            this.tableCT_DONDH.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
@@ -740,10 +733,10 @@ namespace QLVT {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK__CT_PHIEUNH__MAHH__4D94879B", new global::System.Data.DataColumn[] {
+            fkc = new global::System.Data.ForeignKeyConstraint("FK__CT_HOADON__MAHH__5165187F", new global::System.Data.DataColumn[] {
                         this.tableHANGHOA.MAHHColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCT_PHIEUNHAP.MAHHColumn});
-            this.tableCT_PHIEUNHAP.Constraints.Add(fkc);
+                        this.tableCT_HOADON.MAHHColumn});
+            this.tableCT_HOADON.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
@@ -754,9 +747,16 @@ namespace QLVT {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK__DONDH__MANV__35BCFE0A", new global::System.Data.DataColumn[] {
-                        this.tableNHANVIEN.MANVColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDONDH.MANVColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK__CT_PHIEUNH__MAHH__4D94879B", new global::System.Data.DataColumn[] {
+                        this.tableHANGHOA.MAHHColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCT_PHIEUNHAP.MAHHColumn});
+            this.tableCT_PHIEUNHAP.Constraints.Add(fkc);
+            fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
+            fkc.DeleteRule = global::System.Data.Rule.None;
+            fkc.UpdateRule = global::System.Data.Rule.Cascade;
+            fkc = new global::System.Data.ForeignKeyConstraint("FK__DONDH__MANCC__34C8D9D1", new global::System.Data.DataColumn[] {
+                        this.tableNHACC.MANCCColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDONDH.MANCCColumn});
             this.tableDONDH.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -768,9 +768,9 @@ namespace QLVT {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK__DONDH__MANCC__34C8D9D1", new global::System.Data.DataColumn[] {
-                        this.tableNHACC.MANCCColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDONDH.MANCCColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK__DONDH__MANV__35BCFE0A", new global::System.Data.DataColumn[] {
+                        this.tableNHANVIEN.MANVColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDONDH.MANVColumn});
             this.tableDONDH.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -782,9 +782,9 @@ namespace QLVT {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK__HOADON__MAKH__45F365D3", new global::System.Data.DataColumn[] {
-                        this.tableKHACHHANG.MAKHColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHOADON.MAKHColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK__HOADON__MAKHO__440B1D61", new global::System.Data.DataColumn[] {
+                        this.tableKHO.MAKHOColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHOADON.MAKHOColumn});
             this.tableHOADON.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -796,9 +796,9 @@ namespace QLVT {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK__HOADON__MAKHO__440B1D61", new global::System.Data.DataColumn[] {
-                        this.tableKHO.MAKHOColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHOADON.MAKHOColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK__HOADON__MAKH__45F365D3", new global::System.Data.DataColumn[] {
+                        this.tableKHACHHANG.MAKHColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHOADON.MAKHColumn});
             this.tableHOADON.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -817,9 +817,9 @@ namespace QLVT {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK__PHIEUNHAP__MADDH__3E52440B", new global::System.Data.DataColumn[] {
-                        this.tableDONDH.MADDHColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHIEUNHAP.MADDHColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK__PHIEUNHAP__MANV__3D5E1FD2", new global::System.Data.DataColumn[] {
+                        this.tableNHANVIEN.MANVColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHIEUNHAP.MANVColumn});
             this.tablePHIEUNHAP.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
@@ -831,65 +831,65 @@ namespace QLVT {
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            fkc = new global::System.Data.ForeignKeyConstraint("FK__PHIEUNHAP__MANV__3D5E1FD2", new global::System.Data.DataColumn[] {
-                        this.tableNHANVIEN.MANVColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHIEUNHAP.MANVColumn});
+            fkc = new global::System.Data.ForeignKeyConstraint("FK__PHIEUNHAP__MADDH__3E52440B", new global::System.Data.DataColumn[] {
+                        this.tableDONDH.MADDHColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHIEUNHAP.MADDHColumn});
             this.tablePHIEUNHAP.Constraints.Add(fkc);
             fkc.AcceptRejectRule = global::System.Data.AcceptRejectRule.None;
             fkc.DeleteRule = global::System.Data.Rule.None;
             fkc.UpdateRule = global::System.Data.Rule.Cascade;
-            this.relationFK__CT_DONDH__MADDH__48CFD27E = new global::System.Data.DataRelation("FK__CT_DONDH__MADDH__48CFD27E", new global::System.Data.DataColumn[] {
-                        this.tableDONDH.MADDHColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCT_DONDH.MADDHColumn}, false);
-            this.Relations.Add(this.relationFK__CT_DONDH__MADDH__48CFD27E);
             this.relationFK__CT_DONDH__MAHH__49C3F6B7 = new global::System.Data.DataRelation("FK__CT_DONDH__MAHH__49C3F6B7", new global::System.Data.DataColumn[] {
                         this.tableHANGHOA.MAHHColumn}, new global::System.Data.DataColumn[] {
                         this.tableCT_DONDH.MAHHColumn}, false);
             this.Relations.Add(this.relationFK__CT_DONDH__MAHH__49C3F6B7);
-            this.relationFK__CT_HOADON__MAHH__5165187F = new global::System.Data.DataRelation("FK__CT_HOADON__MAHH__5165187F", new global::System.Data.DataColumn[] {
-                        this.tableHANGHOA.MAHHColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCT_HOADON.MAHHColumn}, false);
-            this.Relations.Add(this.relationFK__CT_HOADON__MAHH__5165187F);
+            this.relationFK__CT_DONDH__MADDH__48CFD27E = new global::System.Data.DataRelation("FK__CT_DONDH__MADDH__48CFD27E", new global::System.Data.DataColumn[] {
+                        this.tableDONDH.MADDHColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCT_DONDH.MADDHColumn}, false);
+            this.Relations.Add(this.relationFK__CT_DONDH__MADDH__48CFD27E);
             this.relationFK__CT_HOADON__SOHD__5070F446 = new global::System.Data.DataRelation("FK__CT_HOADON__SOHD__5070F446", new global::System.Data.DataColumn[] {
                         this.tableHOADON.SOHDColumn}, new global::System.Data.DataColumn[] {
                         this.tableCT_HOADON.SOHDColumn}, false);
             this.Relations.Add(this.relationFK__CT_HOADON__SOHD__5070F446);
-            this.relationFK__CT_PHIEUNH__MAHH__4D94879B = new global::System.Data.DataRelation("FK__CT_PHIEUNH__MAHH__4D94879B", new global::System.Data.DataColumn[] {
+            this.relationFK__CT_HOADON__MAHH__5165187F = new global::System.Data.DataRelation("FK__CT_HOADON__MAHH__5165187F", new global::System.Data.DataColumn[] {
                         this.tableHANGHOA.MAHHColumn}, new global::System.Data.DataColumn[] {
-                        this.tableCT_PHIEUNHAP.MAHHColumn}, false);
-            this.Relations.Add(this.relationFK__CT_PHIEUNH__MAHH__4D94879B);
+                        this.tableCT_HOADON.MAHHColumn}, false);
+            this.Relations.Add(this.relationFK__CT_HOADON__MAHH__5165187F);
             this.relationFK__CT_PHIEUNH__SOPN__4CA06362 = new global::System.Data.DataRelation("FK__CT_PHIEUNH__SOPN__4CA06362", new global::System.Data.DataColumn[] {
                         this.tablePHIEUNHAP.SOPNColumn}, new global::System.Data.DataColumn[] {
                         this.tableCT_PHIEUNHAP.SOPNColumn}, false);
             this.Relations.Add(this.relationFK__CT_PHIEUNH__SOPN__4CA06362);
-            this.relationFK__DONDH__MANV__35BCFE0A = new global::System.Data.DataRelation("FK__DONDH__MANV__35BCFE0A", new global::System.Data.DataColumn[] {
-                        this.tableNHANVIEN.MANVColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDONDH.MANVColumn}, false);
-            this.Relations.Add(this.relationFK__DONDH__MANV__35BCFE0A);
-            this.relationFK_DONDH_KHO = new global::System.Data.DataRelation("FK_DONDH_KHO", new global::System.Data.DataColumn[] {
-                        this.tableKHO.MAKHOColumn}, new global::System.Data.DataColumn[] {
-                        this.tableDONDH.MAKHOColumn}, false);
-            this.Relations.Add(this.relationFK_DONDH_KHO);
+            this.relationFK__CT_PHIEUNH__MAHH__4D94879B = new global::System.Data.DataRelation("FK__CT_PHIEUNH__MAHH__4D94879B", new global::System.Data.DataColumn[] {
+                        this.tableHANGHOA.MAHHColumn}, new global::System.Data.DataColumn[] {
+                        this.tableCT_PHIEUNHAP.MAHHColumn}, false);
+            this.Relations.Add(this.relationFK__CT_PHIEUNH__MAHH__4D94879B);
             this.relationFK__DONDH__MANCC__34C8D9D1 = new global::System.Data.DataRelation("FK__DONDH__MANCC__34C8D9D1", new global::System.Data.DataColumn[] {
                         this.tableNHACC.MANCCColumn}, new global::System.Data.DataColumn[] {
                         this.tableDONDH.MANCCColumn}, false);
             this.Relations.Add(this.relationFK__DONDH__MANCC__34C8D9D1);
+            this.relationFK_DONDH_KHO = new global::System.Data.DataRelation("FK_DONDH_KHO", new global::System.Data.DataColumn[] {
+                        this.tableKHO.MAKHOColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDONDH.MAKHOColumn}, false);
+            this.Relations.Add(this.relationFK_DONDH_KHO);
+            this.relationFK__DONDH__MANV__35BCFE0A = new global::System.Data.DataRelation("FK__DONDH__MANV__35BCFE0A", new global::System.Data.DataColumn[] {
+                        this.tableNHANVIEN.MANVColumn}, new global::System.Data.DataColumn[] {
+                        this.tableDONDH.MANVColumn}, false);
+            this.Relations.Add(this.relationFK__DONDH__MANV__35BCFE0A);
             this.relationFK__HANGHOA__MALHH__2F10007B = new global::System.Data.DataRelation("FK__HANGHOA__MALHH__2F10007B", new global::System.Data.DataColumn[] {
                         this.tableLOAIHANGHOA.MALHHColumn}, new global::System.Data.DataColumn[] {
                         this.tableHANGHOA.MALHHColumn}, false);
             this.Relations.Add(this.relationFK__HANGHOA__MALHH__2F10007B);
-            this.relationFK__HOADON__MAKH__45F365D3 = new global::System.Data.DataRelation("FK__HOADON__MAKH__45F365D3", new global::System.Data.DataColumn[] {
-                        this.tableKHACHHANG.MAKHColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHOADON.MAKHColumn}, false);
-            this.Relations.Add(this.relationFK__HOADON__MAKH__45F365D3);
-            this.relationFK__HOADON__MANV__44FF419A = new global::System.Data.DataRelation("FK__HOADON__MANV__44FF419A", new global::System.Data.DataColumn[] {
-                        this.tableNHANVIEN.MANVColumn}, new global::System.Data.DataColumn[] {
-                        this.tableHOADON.MANVColumn}, false);
-            this.Relations.Add(this.relationFK__HOADON__MANV__44FF419A);
             this.relationFK__HOADON__MAKHO__440B1D61 = new global::System.Data.DataRelation("FK__HOADON__MAKHO__440B1D61", new global::System.Data.DataColumn[] {
                         this.tableKHO.MAKHOColumn}, new global::System.Data.DataColumn[] {
                         this.tableHOADON.MAKHOColumn}, false);
             this.Relations.Add(this.relationFK__HOADON__MAKHO__440B1D61);
+            this.relationFK__HOADON__MANV__44FF419A = new global::System.Data.DataRelation("FK__HOADON__MANV__44FF419A", new global::System.Data.DataColumn[] {
+                        this.tableNHANVIEN.MANVColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHOADON.MANVColumn}, false);
+            this.Relations.Add(this.relationFK__HOADON__MANV__44FF419A);
+            this.relationFK__HOADON__MAKH__45F365D3 = new global::System.Data.DataRelation("FK__HOADON__MAKH__45F365D3", new global::System.Data.DataColumn[] {
+                        this.tableKHACHHANG.MAKHColumn}, new global::System.Data.DataColumn[] {
+                        this.tableHOADON.MAKHColumn}, false);
+            this.Relations.Add(this.relationFK__HOADON__MAKH__45F365D3);
             this.relationFK__KHO__MACN__398D8EEE = new global::System.Data.DataRelation("FK__KHO__MACN__398D8EEE", new global::System.Data.DataColumn[] {
                         this.tableCHINHANH.MACNColumn}, new global::System.Data.DataColumn[] {
                         this.tableKHO.MACNColumn}, false);
@@ -898,18 +898,18 @@ namespace QLVT {
                         this.tableCHINHANH.MACNColumn}, new global::System.Data.DataColumn[] {
                         this.tableNHANVIEN.MACNColumn}, false);
             this.Relations.Add(this.relationFK__NHANVIEN__MACN__286302EC);
-            this.relationFK__PHIEUNHAP__MADDH__3E52440B = new global::System.Data.DataRelation("FK__PHIEUNHAP__MADDH__3E52440B", new global::System.Data.DataColumn[] {
-                        this.tableDONDH.MADDHColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHIEUNHAP.MADDHColumn}, false);
-            this.Relations.Add(this.relationFK__PHIEUNHAP__MADDH__3E52440B);
-            this.relationFK__PHIEUNHAP__MAKHO__3C69FB99 = new global::System.Data.DataRelation("FK__PHIEUNHAP__MAKHO__3C69FB99", new global::System.Data.DataColumn[] {
-                        this.tableKHO.MAKHOColumn}, new global::System.Data.DataColumn[] {
-                        this.tablePHIEUNHAP.MAKHOColumn}, false);
-            this.Relations.Add(this.relationFK__PHIEUNHAP__MAKHO__3C69FB99);
             this.relationFK__PHIEUNHAP__MANV__3D5E1FD2 = new global::System.Data.DataRelation("FK__PHIEUNHAP__MANV__3D5E1FD2", new global::System.Data.DataColumn[] {
                         this.tableNHANVIEN.MANVColumn}, new global::System.Data.DataColumn[] {
                         this.tablePHIEUNHAP.MANVColumn}, false);
             this.Relations.Add(this.relationFK__PHIEUNHAP__MANV__3D5E1FD2);
+            this.relationFK__PHIEUNHAP__MAKHO__3C69FB99 = new global::System.Data.DataRelation("FK__PHIEUNHAP__MAKHO__3C69FB99", new global::System.Data.DataColumn[] {
+                        this.tableKHO.MAKHOColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHIEUNHAP.MAKHOColumn}, false);
+            this.Relations.Add(this.relationFK__PHIEUNHAP__MAKHO__3C69FB99);
+            this.relationFK__PHIEUNHAP__MADDH__3E52440B = new global::System.Data.DataRelation("FK__PHIEUNHAP__MADDH__3E52440B", new global::System.Data.DataColumn[] {
+                        this.tableDONDH.MADDHColumn}, new global::System.Data.DataColumn[] {
+                        this.tablePHIEUNHAP.MADDHColumn}, false);
+            this.Relations.Add(this.relationFK__PHIEUNHAP__MADDH__3E52440B);
             this.relationFK__DONDH__MANV__35BCFE0A2 = new global::System.Data.DataRelation("FK__DONDH__MANV__35BCFE0A2", new global::System.Data.DataColumn[] {
                         this.tableHOTENNV.MANVColumn}, new global::System.Data.DataColumn[] {
                         this.tableDONDH.MANVColumn}, false);
@@ -7070,23 +7070,23 @@ namespace QLVT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DONDHRow DONDHRow {
-                get {
-                    return ((DONDHRow)(this.GetParentRow(this.Table.ParentRelations["FK__CT_DONDH__MADDH__48CFD27E"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__CT_DONDH__MADDH__48CFD27E"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public HANGHOARow HANGHOARow {
                 get {
                     return ((HANGHOARow)(this.GetParentRow(this.Table.ParentRelations["FK__CT_DONDH__MAHH__49C3F6B7"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__CT_DONDH__MAHH__49C3F6B7"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public DONDHRow DONDHRow {
+                get {
+                    return ((DONDHRow)(this.GetParentRow(this.Table.ParentRelations["FK__CT_DONDH__MADDH__48CFD27E"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__CT_DONDH__MADDH__48CFD27E"]);
                 }
             }
         }
@@ -7151,23 +7151,23 @@ namespace QLVT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HANGHOARow HANGHOARow {
-                get {
-                    return ((HANGHOARow)(this.GetParentRow(this.Table.ParentRelations["FK__CT_HOADON__MAHH__5165187F"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__CT_HOADON__MAHH__5165187F"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public HOADONRow HOADONRow {
                 get {
                     return ((HOADONRow)(this.GetParentRow(this.Table.ParentRelations["FK__CT_HOADON__SOHD__5070F446"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__CT_HOADON__SOHD__5070F446"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public HANGHOARow HANGHOARow {
+                get {
+                    return ((HANGHOARow)(this.GetParentRow(this.Table.ParentRelations["FK__CT_HOADON__MAHH__5165187F"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__CT_HOADON__MAHH__5165187F"]);
                 }
             }
         }
@@ -7232,23 +7232,23 @@ namespace QLVT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public HANGHOARow HANGHOARow {
-                get {
-                    return ((HANGHOARow)(this.GetParentRow(this.Table.ParentRelations["FK__CT_PHIEUNH__MAHH__4D94879B"])));
-                }
-                set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__CT_PHIEUNH__MAHH__4D94879B"]);
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public PHIEUNHAPRow PHIEUNHAPRow {
                 get {
                     return ((PHIEUNHAPRow)(this.GetParentRow(this.Table.ParentRelations["FK__CT_PHIEUNH__SOPN__4CA06362"])));
                 }
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK__CT_PHIEUNH__SOPN__4CA06362"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public HANGHOARow HANGHOARow {
+                get {
+                    return ((HANGHOARow)(this.GetParentRow(this.Table.ParentRelations["FK__CT_PHIEUNH__MAHH__4D94879B"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__CT_PHIEUNH__MAHH__4D94879B"]);
                 }
             }
         }
@@ -7334,12 +7334,12 @@ namespace QLVT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public NHANVIENRow NHANVIENRow {
+            public NHACCRow NHACCRow {
                 get {
-                    return ((NHANVIENRow)(this.GetParentRow(this.Table.ParentRelations["FK__DONDH__MANV__35BCFE0A"])));
+                    return ((NHACCRow)(this.GetParentRow(this.Table.ParentRelations["FK__DONDH__MANCC__34C8D9D1"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__DONDH__MANV__35BCFE0A"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__DONDH__MANCC__34C8D9D1"]);
                 }
             }
             
@@ -7356,12 +7356,12 @@ namespace QLVT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public NHACCRow NHACCRow {
+            public NHANVIENRow NHANVIENRow {
                 get {
-                    return ((NHACCRow)(this.GetParentRow(this.Table.ParentRelations["FK__DONDH__MANCC__34C8D9D1"])));
+                    return ((NHANVIENRow)(this.GetParentRow(this.Table.ParentRelations["FK__DONDH__MANV__35BCFE0A"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__DONDH__MANCC__34C8D9D1"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__DONDH__MANV__35BCFE0A"]);
                 }
             }
             
@@ -7597,12 +7597,12 @@ namespace QLVT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public KHACHHANGRow KHACHHANGRow {
+            public KHORow KHORow {
                 get {
-                    return ((KHACHHANGRow)(this.GetParentRow(this.Table.ParentRelations["FK__HOADON__MAKH__45F365D3"])));
+                    return ((KHORow)(this.GetParentRow(this.Table.ParentRelations["FK__HOADON__MAKHO__440B1D61"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__HOADON__MAKH__45F365D3"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__HOADON__MAKHO__440B1D61"]);
                 }
             }
             
@@ -7619,12 +7619,12 @@ namespace QLVT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public KHORow KHORow {
+            public KHACHHANGRow KHACHHANGRow {
                 get {
-                    return ((KHORow)(this.GetParentRow(this.Table.ParentRelations["FK__HOADON__MAKHO__440B1D61"])));
+                    return ((KHACHHANGRow)(this.GetParentRow(this.Table.ParentRelations["FK__HOADON__MAKH__45F365D3"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__HOADON__MAKHO__440B1D61"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__HOADON__MAKH__45F365D3"]);
                 }
             }
             
@@ -8307,12 +8307,12 @@ namespace QLVT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public DONDHRow DONDHRow {
+            public NHANVIENRow NHANVIENRow {
                 get {
-                    return ((DONDHRow)(this.GetParentRow(this.Table.ParentRelations["FK__PHIEUNHAP__MADDH__3E52440B"])));
+                    return ((NHANVIENRow)(this.GetParentRow(this.Table.ParentRelations["FK__PHIEUNHAP__MANV__3D5E1FD2"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__PHIEUNHAP__MADDH__3E52440B"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__PHIEUNHAP__MANV__3D5E1FD2"]);
                 }
             }
             
@@ -8329,12 +8329,12 @@ namespace QLVT {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public NHANVIENRow NHANVIENRow {
+            public DONDHRow DONDHRow {
                 get {
-                    return ((NHANVIENRow)(this.GetParentRow(this.Table.ParentRelations["FK__PHIEUNHAP__MANV__3D5E1FD2"])));
+                    return ((DONDHRow)(this.GetParentRow(this.Table.ParentRelations["FK__PHIEUNHAP__MADDH__3E52440B"])));
                 }
                 set {
-                    this.SetParentRow(value, this.Table.ParentRelations["FK__PHIEUNHAP__MANV__3D5E1FD2"]);
+                    this.SetParentRow(value, this.Table.ParentRelations["FK__PHIEUNHAP__MADDH__3E52440B"]);
                 }
             }
             
@@ -15728,7 +15728,7 @@ SELECT SOPN, NGAYLAP, MANV, MAKHO, MADDH FROM PHIEUNHAP WHERE (SOPN = @SOPN)";
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT        HO + \' \' + TEN AS HOTEN, MANV, PHAI, NGAYSINH, DIACHI, SDT\r\nFROM   " +
-                "         NHANVIEN\r\nWHERE        (TRANGTHAIXOA = 0)\r\nORDER BY TEN, HO";
+                "         NHANVIEN\r\nORDER BY TEN, HO";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

@@ -59,7 +59,7 @@ namespace QLVT
         public static String mGroup = "";//mGroup
         public static String mHoTen = "";//mHoTen
         public static int mChiNhanh = 0;//mChiNhanh
-
+        public static int mChiNhanh_cnn = 0; // chi nhánh để so sánh khi thực hiện action chuyển chi nhánh
         /*bidSou: BindingSource -> liên kết dữ liệu từ bảng dữ liệu vào chương trình*/
         public static BindingSource bds_dspm = new BindingSource();//bds_dspm
 
