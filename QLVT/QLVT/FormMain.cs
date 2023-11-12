@@ -234,5 +234,20 @@ namespace QLVT
                 form.Show();
             }
         }
+
+        private void btnDonDatHang_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(FormDonDatHang));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormDonDatHang form = new FormDonDatHang();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
     }
 }

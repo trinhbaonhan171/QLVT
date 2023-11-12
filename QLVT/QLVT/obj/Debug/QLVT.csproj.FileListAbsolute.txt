@@ -287,3 +287,4 @@ D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.Report.Xrpt_DonHangKhongPhieu
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.Report.Xrpt_DSHangHoa.resources
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.Report.Frpt_DSNhanVien.resources
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.Report.Xrpt_DSNhanVien.resources
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.FormDonDatHang.resources

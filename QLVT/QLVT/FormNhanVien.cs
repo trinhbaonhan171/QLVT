@@ -58,9 +58,18 @@ namespace QLVT
             /*Step 1*/
             /*không kiểm tra khóa ngoại nữa*/
             DS.EnforceConstraints = false;
+
             this.nHANVIENTableAdapter.Connection.ConnectionString = Program.connstr;
-            // TODO: This line of code loads data into the 'dS.NHANVIEN' table. You can move, or remove it, as needed.
             this.nHANVIENTableAdapter.Fill(this.DS.NHANVIEN);
+
+            this.dONDHTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.dONDHTableAdapter.Fill(this.DS.DONDH);
+
+            this.pHIEUNHAPTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.pHIEUNHAPTableAdapter.Fill(this.DS.PHIEUNHAP);
+
+            this.hOADONTableAdapter.Connection.ConnectionString = Program.connstr;
+            this.hOADONTableAdapter.Fill(this.DS.HOADON);
 
             maChiNhanh = ((DataRowView)bdsNhanVien[0])["MACN"].ToString();
 
@@ -143,14 +152,14 @@ namespace QLVT
                 this.nHANVIENTableAdapter.Connection.ConnectionString = Program.connstr;
                 this.nHANVIENTableAdapter.Fill(this.DS.NHANVIEN);
 
-                /*this.datHangTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.datHangTableAdapter.Fill(this.dataSet.DatHang);
+                this.dONDHTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.dONDHTableAdapter.Fill(this.DS.DONDH);
 
-                this.phieuXuatTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.phieuNhapTableAdapter.Fill(this.dataSet.PhieuNhap);
+                this.pHIEUNHAPTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.pHIEUNHAPTableAdapter.Fill(this.DS.PHIEUNHAP);
 
-                this.phieuXuatTableAdapter.Connection.ConnectionString = Program.connstr;
-                this.phieuXuatTableAdapter.Fill(this.dataSet.PhieuXuat);*/
+                this.hOADONTableAdapter.Connection.ConnectionString = Program.connstr;
+                this.hOADONTableAdapter.Fill(this.DS.HOADON);
                 /*Tu dong lay maChiNhanh hien tai - phuc vu cho phan btnTHEM*/
                 maChiNhanh = ((DataRowView)bdsNhanVien[0])["MACN"].ToString().Trim();
             }
@@ -558,7 +567,7 @@ namespace QLVT
                 btnXOA.Enabled = false;
             }
 
-            /*if (bdsDatHang.Count > 0)
+            if (bdsDDH.Count > 0)
             {
                 MessageBox.Show("Không thể xóa nhân viên này vì đã lập đơn đặt hàng", "Thông báo", MessageBoxButtons.OK);
                 return;
@@ -570,11 +579,11 @@ namespace QLVT
                 return;
             }
 
-            if (bdsPhieuXuat.Count > 0)
+            if (bdsHoaDon.Count > 0)
             {
-                MessageBox.Show("Không thể xóa nhân viên này vì đã lập phiếu xuất", "Thông báo", MessageBoxButtons.OK);
+                MessageBox.Show("Không thể xóa nhân viên này vì đã lập hóa đơn", "Thông báo", MessageBoxButtons.OK);
                 return;
-            }*/
+            }
 
             /* Phần này phục vụ tính năng hoàn tác
                     * Đưa câu truy vấn hoàn tác vào undoList*/
@@ -728,6 +737,11 @@ namespace QLVT
 
             /*Step 4*/
             this.btnHOANTAC.Enabled = true;
+        }
+
+        private void btnTHOAT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Close();
         }
     }
 }
