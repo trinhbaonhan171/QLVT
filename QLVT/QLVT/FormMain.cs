@@ -249,5 +249,36 @@ namespace QLVT
                 form.Show();
             }
         }
+
+        private void btnXuatVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+
+            /*Form f = this.CheckExists(typeof(FormHoaDon));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormHoaDon form = new FormHoaDon();
+                form.MdiParent = this;
+                form.Show();
+            }*/
+        }
+
+        private void btnNhapVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(FormNhapHang));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormNhapHang form = new FormNhapHang();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
     }
 }

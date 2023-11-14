@@ -96,7 +96,7 @@ namespace QLVT
             this.btnHoatDongNhanVien,
             this.btnTongHopNhapXuat});
             this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5);
+            this.ribbonControl1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.ribbonControl1.MaxItemId = 33;
             this.ribbonControl1.Name = "ribbonControl1";
             this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -197,17 +197,19 @@ namespace QLVT
             // 
             // btnNhapVatTu
             // 
-            this.btnNhapVatTu.Caption = "NHẬP VẬT TƯ";
+            this.btnNhapVatTu.Caption = "NHẬP HÀNG HÓA";
             this.btnNhapVatTu.Id = 25;
             this.btnNhapVatTu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnNhapVatTu.ImageOptions.SvgImage")));
             this.btnNhapVatTu.Name = "btnNhapVatTu";
+            this.btnNhapVatTu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnNhapVatTu_ItemClick);
             // 
             // btnXuatVatTu
             // 
-            this.btnXuatVatTu.Caption = "XUẤT VẬT TƯ";
+            this.btnXuatVatTu.Caption = "XUẤT HÓA ĐƠN";
             this.btnXuatVatTu.Id = 26;
             this.btnXuatVatTu.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnXuatVatTu.ImageOptions.SvgImage")));
             this.btnXuatVatTu.Name = "btnXuatVatTu";
+            this.btnXuatVatTu.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXuatVatTu_ItemClick);
             // 
             // btnDanhSachNhanVien
             // 

@@ -355,7 +355,7 @@ namespace QLVT
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 51);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1543, 60);
+            this.panel1.Size = new System.Drawing.Size(1543, 94);
             this.panel1.TabIndex = 4;
             // 
             // label1
@@ -417,12 +417,12 @@ namespace QLVT
             this.gcNhanVien.DataSource = this.bdsNhanVien;
             this.gcNhanVien.Dock = System.Windows.Forms.DockStyle.Top;
             this.gcNhanVien.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(5);
-            this.gcNhanVien.Location = new System.Drawing.Point(0, 111);
+            this.gcNhanVien.Location = new System.Drawing.Point(0, 145);
             this.gcNhanVien.MainView = this.gridView1;
             this.gcNhanVien.Margin = new System.Windows.Forms.Padding(5);
             this.gcNhanVien.MenuManager = this.barManager1;
             this.gcNhanVien.Name = "gcNhanVien";
-            this.gcNhanVien.Size = new System.Drawing.Size(1543, 331);
+            this.gcNhanVien.Size = new System.Drawing.Size(1543, 518);
             this.gcNhanVien.TabIndex = 9;
             this.gcNhanVien.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -542,9 +542,9 @@ namespace QLVT
             this.panelNhapLieu.Controls.Add(mANVLabel);
             this.panelNhapLieu.Controls.Add(this.txtMANV);
             this.panelNhapLieu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelNhapLieu.Location = new System.Drawing.Point(0, 442);
+            this.panelNhapLieu.Location = new System.Drawing.Point(0, 663);
             this.panelNhapLieu.Name = "panelNhapLieu";
-            this.panelNhapLieu.Size = new System.Drawing.Size(1543, 252);
+            this.panelNhapLieu.Size = new System.Drawing.Size(1543, 31);
             this.panelNhapLieu.TabIndex = 10;
             this.panelNhapLieu.TabStop = false;
             // 

@@ -85,53 +85,6 @@ namespace QLVT
             }
         }
 
-        private void bdsDDH_load()
-        {
-            // Lấy giá trị  từ dòng hiện tại của bdsDDH
-            DataRowView currentRow = (DataRowView)bdsDDH.Current;
-            if (currentRow != null)
-            {
-                string makho = currentRow["MAKHO"].ToString().Trim();
-                string manhacc = currentRow["MANCC"].ToString().Trim();
-                string manv = currentRow["MANV"].ToString().Trim();
-                // Tìm kiếm MAKHO trong bdsKho
-                int index_kho = bdsKho.Find("MAKHO", makho);
-
-                // Nếu tìm thấy, chọn giá trị tương ứng trong cmbKho
-                if (index_kho != -1)
-                {
-                    cmbKho.SelectedValue = makho;
-                }
-                // Tìm kiếm MANCC trong bdsNhacc
-                int index_nhacc = bdsNhaCC.Find("MANCC", manhacc);
-
-                // Nếu tìm thấy, chọn giá trị tương ứng trong cmbNhaCC
-                if (index_nhacc != -1)
-                {
-
-                    cmbNhaCC.SelectedValue = manhacc;
-                }
-            }
-        }
-        private void bdsCTDDH_load()
-        {
-            // Lấy giá trị  từ dòng hiện tại của bdsCTDDH
-            DataRowView currentRow = (DataRowView)bdsCTDDH.Current;
-            if (currentRow != null)
-            {
-
-                string mahh = currentRow["MAHH"].ToString().Trim();
-                // Tìm kiếm MAHH trong bdsHangHoa
-                int index_mahh = bdsHangHoa.Find("MAHH", mahh);
-
-                // Nếu tìm thấy, chọn giá trị tương ứng trong cmbNhaCC
-                if (index_mahh != -1)
-                {
-                    cmbHH.SelectedValue = mahh;
-                }
-            }
-        }
-
         private void dONDHBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
             this.Validate();
@@ -198,8 +151,8 @@ namespace QLVT
 
             bdsDDH.CurrentChanged += BdsDDH_CurrentChanged;
             bdsCTDDH.CurrentChanged += BdsCTDDH_CurrentChanged;
-            this.bdsDDH_load();
-            this.bdsCTDDH_load();
+            BdsDDH_CurrentChanged(sender, e);
+            BdsCTDDH_CurrentChanged(sender, e);
 
             /*Step 3 */
             /*CONG TY chi xem du lieu*/
@@ -312,7 +265,6 @@ namespace QLVT
             txtMaNhanVien.Enabled = false;
 
             cmbKho.Enabled = true;
-            gcDDH.Enabled = true;
             /* btnChonKhoHang.Enabled = true;*/
 
             /*Tat chuc nang cua chi tiet don hang*/
@@ -945,7 +897,7 @@ namespace QLVT
                 catch (Exception ex)
                 {
                     /*Step 4*/
-                    MessageBox.Show("Lỗi xóa nhân viên. Hãy thử lại\n" + ex.Message, "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Lỗi xóa. Hãy thử lại\n" + ex.Message, "Thông báo", MessageBoxButtons.OK);
                     this.dONDHTableAdapter.Connection.ConnectionString = Program.connstr;
                     this.dONDHTableAdapter.Update(this.DS.DONDH);
 
