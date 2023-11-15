@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 using DevExpress.XtraGrid;
 
@@ -36,41 +37,6 @@ namespace QLVT
             return null;
         }
 
-        private void BdsPhieuNhap_CurrentChanged(object sender, EventArgs e)
-        {
-            // Lấy giá trị  từ dòng hiện tại của bdsDDH
-            DataRowView currentRow = (DataRowView)bdsPhieuNhap.Current;
-            if (currentRow != null)
-            {
-                string makho = currentRow["MAKHO"].ToString().Trim();
-                string maDDH = currentRow["MADDH"].ToString().Trim();
-
-                // Tìm kiếm MAKHO trong bdsKho
-                int index_kho = bdsKho.Find("MAKHO", makho);
-                int index_maddh = bdsDonDatHang.Find("MADDH", maDDH);
-
-                // Nếu tìm thấy, chọn giá trị tương ứng trong cmbKho
-               /* if (index_kho != -1)
-                {
-                    cmbKho.SelectedValue = makho;
-                }
-                if (index_maddh != -1)
-                {
-                    cmbDonDatHang.SelectedValue = maDDH;
-                }*/
-            }
-
-        }
-        private void BdsCT_PhieuNhap_CurrentChanged(object sender, EventArgs e)
-        {
-           
-            /* gcCTPN.DataSource = bds_CTPhieuNhap;*/
-
-            /*  gcCTPN.Columns["MAHH"].DataPropertyName = "MAHH";
-              gcCTPN.Columns["SOLUONG"].DataPropertyName = "SOLUONG";
-              gcCTPN.Columns["DONGIA"].DataPropertyName = "DONGIA";*/
-        }
-
         private void FormNhapHang_Load(object sender, EventArgs e)
         {
             DS.EnforceConstraints = false;
@@ -89,10 +55,7 @@ namespace QLVT
 
             this.dONDHTableAdapter.Connection.ConnectionString = Program.connstr;
             this.dONDHTableAdapter.Fill(this.DS.DONDH);
-            /*cmb đơn đặt hàng*/
-           /* cmbDonDatHang.DataSource = bdsDonDatHang;
-            cmbDonDatHang.DisplayMember = "MADDH";
-            cmbDonDatHang.ValueMember = "MADDH";*/
+         
 
 
             cmbChiNhanh.DataSource = Program.bds_dspm;/*sao chep bingding source tu form dang nhap*/
@@ -100,14 +63,7 @@ namespace QLVT
             cmbChiNhanh.ValueMember = "TENSERVER";
             cmbChiNhanh.SelectedIndex = Program.mChiNhanh;
 
-           
-
-            bdsPhieuNhap.CurrentChanged += BdsPhieuNhap_CurrentChanged;
-            bds_CTPhieuNhap.CurrentChanged += BdsCT_PhieuNhap_CurrentChanged;
-            BdsPhieuNhap_CurrentChanged(sender, e);
-            BdsCT_PhieuNhap_CurrentChanged(sender, e);
-
-            
+          
 
             if (Program.mGroup == "CONGTY")
             {
@@ -115,16 +71,13 @@ namespace QLVT
 
                 this.btnTHEM.Enabled = false;
                 this.btnXOA.Enabled = false;
-                this.btnGHI.Enabled = false;
+                this.btnSua.Enabled = false;
                 this.btnMENU.Enabled = false;
 
 
                 this.btnHOANTAC.Enabled = false;
                 this.btnLAMMOI.Enabled = true;
                 this.btnTHOAT.Enabled = true;
-
-                /*this.gbPN_edit.Enabled = true;
-                this.gbCTPN.Enabled = true;*/
             }
 
             /* CHI NHANH & USER co the xem - xoa - sua du lieu nhung khong the 
@@ -135,15 +88,12 @@ namespace QLVT
 
                 this.btnTHEM.Enabled = true;
                 this.btnXOA.Enabled = true;
-                this.btnGHI.Enabled = true;
+                this.btnSua.Enabled = true;
 
                 this.btnHOANTAC.Enabled = false;
                 this.btnLAMMOI.Enabled = true;
                 this.btnTHOAT.Enabled = true;
-
-
-               /* this.gbPN_edit.Enabled = true;
-                this.gbCTPN.Enabled = true;*/
+               
             }
 
         }
@@ -207,8 +157,7 @@ namespace QLVT
 
             gcPN.Enabled = true;
             gcCTPN.Enabled = true;
-           /* gbPN_edit.Enabled = true;
-            gbCTPN.Enabled = true;*/
+           
 
 
             /*Step 2*/
@@ -217,9 +166,7 @@ namespace QLVT
             bds_CTPhieuNhap.AddNew();
 
             int viTriHienTai = bdsPhieuNhap.Position;
-          /*  int trangThaiXoa = int.Parse(((DataRowView)(bds[viTriHienTai]))["TRANGTHAIXOA"].ToString());
-            string maNhanVien = ((DataRowView)(bds[viTriHienTai]))["MANV"].ToString();*/
-
+         
 
             /*Step 2 Kiem tra xem form da co trong bo nho chua*/
             Form f = this.CheckExists(typeof(FormThemPhieuNhap));
@@ -244,78 +191,153 @@ namespace QLVT
         }
         public void themPhieuNhap(Dictionary<string, string> listData, DataGridView dataCTPN)
         {
+            using (TransactionScope scope = new TransactionScope())
+            {
+                try
+                {
+                    ((DataRowView)(bdsPhieuNhap.Current))["SOPN"] = listData["SOPN"];
+                    ((DataRowView)(bdsPhieuNhap.Current))["NGAYLAP"] = listData["NGAYLAP"];
+                    ((DataRowView)(bdsPhieuNhap.Current))["MANV"] = Program.username;
+                    ((DataRowView)(bdsPhieuNhap.Current))["MAKHO"] = listData["MAKHO"];
+                    ((DataRowView)(bdsPhieuNhap.Current))["MADDH"] = listData["MADDH"];
+                    this.bdsPhieuNhap.EndEdit();
+                    this.pHIEUNHAPTableAdapter.Update(this.DS.PHIEUNHAP);
+                    /*chi tiet pn*/
+                    foreach (DataGridViewRow row in dataCTPN.Rows)
+                    {
+                        DataGridViewCell mahhCell = row.Cells["MAHH"];
+
+                        DataGridViewCell soLuongCell = row.Cells["SOLUONG"];
+                        DataGridViewCell donGiaCell = row.Cells["DONGIA"];
+
+                        if (mahhCell.Value != null && !string.IsNullOrEmpty(mahhCell.Value.ToString()) && soLuongCell.Value != null && !string.IsNullOrEmpty(soLuongCell.Value.ToString()) && donGiaCell.Value != null && !string.IsNullOrEmpty(donGiaCell.Value.ToString()))
+                        {
+                            string mahh = mahhCell.Value.ToString().Trim();
+                            string sopn = listData["SOPN"].ToString().Trim();
+                            int soluong = int.Parse(soLuongCell.EditedFormattedValue.ToString().Trim());
+                            float dongia = float.Parse(donGiaCell.EditedFormattedValue.ToString().Trim());
+                            if (dangThemMoi == true)
+                            {
+                                DataRowView row_save = (DataRowView)bds_CTPhieuNhap.AddNew();
+                                row_save["MAHH"] = mahh;
+                                row_save["SOPN"] = sopn;
+                                row_save["SOLUONG"] = soluong;
+                                row_save["DONGIA"] = dongia;
+                                capNhatSoLuongVatTu(mahh, soluong);
+                            }
+                            else
+                            {
+                                string cauTruyVan = "EXEC sp_UpdateChiTietPhieuNhap '" + mahh + "', '" + sopn + "', " + soluong + ", " + dongia;
+
+                                int n = Program.ExecSqlNonQuery(cauTruyVan);
+                            }
+                            
+                        }
+
+                    }
+                    this.bds_CTPhieuNhap.EndEdit();
+                    this.cT_PHIEUNHAPTableAdapter.Update(this.DS.CT_PHIEUNHAP);
+
+
+                    this.btnTHEM.Enabled = true;
+                    this.btnXOA.Enabled = true;
+                    this.btnSua.Enabled = true;
+
+                    this.btnHOANTAC.Enabled = true;
+                    this.btnLAMMOI.Enabled = true;
+                    this.btnMENU.Enabled = true;
+                    this.btnTHOAT.Enabled = true;
+
+                    this.gcPN.Enabled = true;
+                    this.gcCTPN.Enabled = true;
+
+                    /*cập nhật lại trạng thái thêm mới */
+                    dangThemMoi = false;
+                    scope.Complete();
+                    MessageBox.Show("Ghi thành công", "Thông báo", MessageBoxButtons.OK);
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                    bdsPhieuNhap.RemoveCurrent();
+                    MessageBox.Show("Da xay ra loi !\n\n" + ex.Message, "Lỗi",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }    
+            
+        }
+
+        private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            if(gvPN.FocusedRowHandle >= 0)
+            {
+                object currentRow = gvPN.GetFocusedRow();
+
+                if (currentRow is DataRowView rowView)
+                {
+                    string soPN = rowView["SOPN"].ToString().Trim();
+                    string ngaylap = rowView["NGAYLAP"].ToString().Trim();
+                   
+
+                    string manv = rowView["MANV"].ToString().Trim();
+                    string makho = rowView["MAKHO"].ToString().Trim();
+                    string maddh = rowView["MADDH"].ToString().Trim();
+
+                    Dictionary<string, string> listDataPNEdit = new Dictionary<string, string>();
+
+                    listDataPNEdit["SOPN"] = soPN;
+                    listDataPNEdit["NGAYLAP"] = ngaylap;
+                    listDataPNEdit["MANV"] = manv;
+                    listDataPNEdit["MAKHO"] = makho;
+                    listDataPNEdit["MADDH"] = maddh;
+
+
+                    Form f = this.CheckExists(typeof(FormThemPhieuNhap));
+                    if (f != null)
+                    {
+                        f.Activate();
+                    }
+                    FormThemPhieuNhap form = new FormThemPhieuNhap();
+
+                    form.GetbdsDDH = bdsDonDatHang;
+                    form.GetbdsHangHoa = bdsHangHoa;
+                    form.GetbdsKho = bdsKho;
+                    form.GetbdsCTPN = bds_CTPhieuNhap;
+                    form.SetDictionaryDataPNEdit(listDataPNEdit);
+
+                    form.Show();
+                    /*Step 3*/
+                    /*đóng gói hàm themPhieuNhap từ formNhapHang đem về formThemPhieuNhap để làm việc*/
+                    form.branchTransfer = new FormThemPhieuNhap.MyDelegate(themPhieuNhap);
+
+                    /*Step 4*/
+                    this.btnHOANTAC.Enabled = true;
+                }
+            }    
+        }
+
+        private void btnLAMMOI_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
             try
             {
-                 
-                /*string maVatTu = txtMaVatChiTietPhieuNhap.Text.Trim();
-                    int soLuong = (int)txtSoLuongChiTietPhieuNhap.Value;
-
-                    capNhatSoLuongVatTu(maVatTu, soLuong);*/
-
-                    /*TH3: chinh sua phieu nhap -> chang co gi co the chinh sua
-                     * duoc -> chang can xu ly*/
-                    /*TH4: chinh sua chi tiet phieu nhap - > thi chi can may dong lenh duoi la xong*/
-                    /* undoList.Push(cauTruyVanHoanTac);
-                     Console.WriteLine("cau truy van hoan tac");
-                     Console.WriteLine(cauTruyVanHoanTac);*/
-                ((DataRowView)(bdsPhieuNhap.Current))["SOPN"] = listData["SOPN"];
-                ((DataRowView)(bdsPhieuNhap.Current))["NGAYLAP"] = listData["NGAYLAP"];
-                ((DataRowView)(bdsPhieuNhap.Current))["MANV"] = Program.username;
-                ((DataRowView)(bdsPhieuNhap.Current))["MAKHO"] = listData["MAKHO"];
-                ((DataRowView)(bdsPhieuNhap.Current))["MADDH"] = listData["MADDH"];
-                this.bdsPhieuNhap.EndEdit();
-                /*this.bds_CTPhieuNhap.EndEdit();*/
-                this.pHIEUNHAPTableAdapter.Update(this.DS.PHIEUNHAP);
-                /*chi tiet pn*/
-                foreach (DataGridViewRow row in dataCTPN.Rows)
-                {
-                    DataGridViewComboBoxCell comboBoxCell = row.Cells["MAHH"] as DataGridViewComboBoxCell;
-                    string mahh = comboBoxCell.Value?.ToString();
-
-                    DataGridViewCell soLuongCell = row.Cells["SOLUONG"];
-                    DataGridViewCell donGiaCell = row.Cells["DONGIA"];
-
-                    if(mahh != null && soLuongCell.Value != null && !string.IsNullOrEmpty(soLuongCell.Value.ToString()) && donGiaCell.Value != null && !string.IsNullOrEmpty(donGiaCell.Value.ToString()))
-                    {
-                        /*DataRowView newCTPhieuNhap = (DataRowView)bds_CTPhieuNhap.AddNew();*/
-                        DataRowView row_save = (DataRowView)bds_CTPhieuNhap.AddNew();
-                        row_save["MAHH"] = mahh.ToString();
-                        row_save["SOPN"] = listData["SOPN"].ToString();
-                        row_save["SOLUONG"] = soLuongCell.Value.ToString();
-                        row_save["DONGIA"] = donGiaCell.Value.ToString();
-                    }    
-                    
-                }
-                this.bds_CTPhieuNhap.EndEdit();
-                this.cT_PHIEUNHAPTableAdapter.Update(this.DS.CT_PHIEUNHAP);
-
-                this.btnTHEM.Enabled = true;
-                this.btnXOA.Enabled = true;
-                this.btnGHI.Enabled = true;
-
-                this.btnHOANTAC.Enabled = true;
-                this.btnLAMMOI.Enabled = true;
-                this.btnMENU.Enabled = true;
-                this.btnTHOAT.Enabled = true;
-
-                this.gcPN.Enabled = true;
-                this.gcCTPN.Enabled = true;
-
-                /*this.txtSoLuongChiTietPhieuNhap.Enabled = false;
-                this.txtDonGiaChiTietPhieuNhap.Enabled = false;*/
-                /*cập nhật lại trạng thái thêm mới cho chắc*/
-               /* dangThemMoi = false;*/
-                MessageBox.Show("Ghi thành công", "Thông báo", MessageBoxButtons.OK);
+                this.pHIEUNHAPTableAdapter.Fill(this.DS.PHIEUNHAP);
+                this.cT_PHIEUNHAPTableAdapter.Fill(this.DS.CT_PHIEUNHAP);
             }
             catch (Exception ex)
             {
+                MessageBox.Show("Lỗi làm mời dữ liệu\n\n" + ex.Message, "Thông Báo", MessageBoxButtons.OK);
                 Console.WriteLine(ex.Message);
-                bdsPhieuNhap.RemoveCurrent();
-                MessageBox.Show("Da xay ra loi !\n\n" + ex.Message, "Lỗi",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
         }
-        
+        private void capNhatSoLuongVatTu(string maVatTu, int soLuong)
+        {
+            string cauTruyVan = "EXEC sp_CapNhatSoLuongVatTu 'IMPORT','" + maVatTu + "', " + soLuong;
+
+
+            int n = Program.ExecSqlNonQuery(cauTruyVan);
+           
+        }
     }
 }

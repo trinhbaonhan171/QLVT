@@ -39,10 +39,7 @@ namespace QLVT
             this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
             this.bar1 = new DevExpress.XtraBars.Bar();
             this.bar2 = new DevExpress.XtraBars.Bar();
-            this.btnXOA = new DevExpress.XtraBars.BarButtonItem();
             this.btnGHI = new DevExpress.XtraBars.BarButtonItem();
-            this.btnHOANTAC = new DevExpress.XtraBars.BarButtonItem();
-            this.btnLAMMOI = new DevExpress.XtraBars.BarButtonItem();
             this.btnTHOAT = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -93,7 +90,7 @@ namespace QLVT
             mADDHLabel.AutoSize = true;
             mADDHLabel.Location = new System.Drawing.Point(95, 32);
             mADDHLabel.Name = "mADDHLabel";
-            mADDHLabel.Size = new System.Drawing.Size(127, 22);
+            mADDHLabel.Size = new System.Drawing.Size(101, 19);
             mADDHLabel.TabIndex = 3;
             mADDHLabel.Text = "Số Phiếu Nhập";
             // 
@@ -102,7 +99,7 @@ namespace QLVT
             mANVLabel.AutoSize = true;
             mANVLabel.Location = new System.Drawing.Point(125, 159);
             mANVLabel.Name = "mANVLabel";
-            mANVLabel.Size = new System.Drawing.Size(92, 22);
+            mANVLabel.Size = new System.Drawing.Size(73, 19);
             mANVLabel.TabIndex = 3;
             mANVLabel.Text = "Nhân Viên";
             // 
@@ -111,7 +108,7 @@ namespace QLVT
             mAKHOLabel.AutoSize = true;
             mAKHOLabel.Location = new System.Drawing.Point(165, 220);
             mAKHOLabel.Name = "mAKHOLabel";
-            mAKHOLabel.Size = new System.Drawing.Size(43, 22);
+            mAKHOLabel.Size = new System.Drawing.Size(36, 19);
             mAKHOLabel.TabIndex = 3;
             mAKHOLabel.Text = "Kho";
             // 
@@ -120,16 +117,16 @@ namespace QLVT
             nGAYLAPLabel.AutoSize = true;
             nGAYLAPLabel.Location = new System.Drawing.Point(136, 100);
             nGAYLAPLabel.Name = "nGAYLAPLabel";
-            nGAYLAPLabel.Size = new System.Drawing.Size(86, 22);
+            nGAYLAPLabel.Size = new System.Drawing.Size(70, 19);
             nGAYLAPLabel.TabIndex = 3;
             nGAYLAPLabel.Text = "Ngày Lập";
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(39, 288);
+            label2.Location = new System.Drawing.Point(64, 288);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(169, 22);
+            label2.Size = new System.Drawing.Size(134, 19);
             label2.TabIndex = 5;
             label2.Text = "Chọn Đơn Đặt Hàng";
             // 
@@ -145,10 +142,7 @@ namespace QLVT
             this.barManager1.DockControls.Add(this.barDockControlRight);
             this.barManager1.Form = this;
             this.barManager1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.btnXOA,
             this.btnGHI,
-            this.btnHOANTAC,
-            this.btnLAMMOI,
             this.btnTHOAT,
             this.btnCheDoDonDatHang,
             this.btnCheDoChiTietDonDatHang});
@@ -172,21 +166,10 @@ namespace QLVT
             this.bar2.DockStyle = DevExpress.XtraBars.BarDockStyle.Top;
             this.bar2.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnGHI, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnXOA, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnHOANTAC, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnLAMMOI, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
             new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnTHOAT, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph)});
             this.bar2.OptionsBar.MultiLine = true;
             this.bar2.OptionsBar.UseWholeRow = true;
             this.bar2.Text = "Main menu";
-            // 
-            // btnXOA
-            // 
-            this.btnXOA.Caption = "Xóa";
-            this.btnXOA.Id = 1;
-            this.btnXOA.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXOA.ImageOptions.Image")));
-            this.btnXOA.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXOA.ImageOptions.LargeImage")));
-            this.btnXOA.Name = "btnXOA";
             // 
             // btnGHI
             // 
@@ -195,22 +178,6 @@ namespace QLVT
             this.btnGHI.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("btnGHI.ImageOptions.SvgImage")));
             this.btnGHI.Name = "btnGHI";
             this.btnGHI.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnGHI_ItemClick);
-            // 
-            // btnHOANTAC
-            // 
-            this.btnHOANTAC.Caption = "Hoàn tác";
-            this.btnHOANTAC.Id = 3;
-            this.btnHOANTAC.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnHOANTAC.ImageOptions.Image")));
-            this.btnHOANTAC.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnHOANTAC.ImageOptions.LargeImage")));
-            this.btnHOANTAC.Name = "btnHOANTAC";
-            // 
-            // btnLAMMOI
-            // 
-            this.btnLAMMOI.Caption = "Làm mới";
-            this.btnLAMMOI.Id = 4;
-            this.btnLAMMOI.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnLAMMOI.ImageOptions.Image")));
-            this.btnLAMMOI.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnLAMMOI.ImageOptions.LargeImage")));
-            this.btnLAMMOI.Name = "btnLAMMOI";
             // 
             // btnTHOAT
             // 
@@ -238,7 +205,7 @@ namespace QLVT
             this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
             this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
             this.barDockControlTop.Manager = this.barManager1;
-            this.barDockControlTop.Size = new System.Drawing.Size(1362, 51);
+            this.barDockControlTop.Size = new System.Drawing.Size(1362, 45);
             // 
             // barDockControlBottom
             // 
@@ -252,17 +219,17 @@ namespace QLVT
             // 
             this.barDockControlLeft.CausesValidation = false;
             this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
-            this.barDockControlLeft.Location = new System.Drawing.Point(0, 51);
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 45);
             this.barDockControlLeft.Manager = this.barManager1;
-            this.barDockControlLeft.Size = new System.Drawing.Size(0, 408);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 414);
             // 
             // barDockControlRight
             // 
             this.barDockControlRight.CausesValidation = false;
             this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.barDockControlRight.Location = new System.Drawing.Point(1362, 51);
+            this.barDockControlRight.Location = new System.Drawing.Point(1362, 45);
             this.barDockControlRight.Manager = this.barManager1;
-            this.barDockControlRight.Size = new System.Drawing.Size(0, 408);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 414);
             // 
             // btnCheDoDonDatHang
             // 
@@ -294,9 +261,9 @@ namespace QLVT
             // 
             this.gcThongTin.Controls.Add(this.panelControl1);
             this.gcThongTin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcThongTin.Location = new System.Drawing.Point(3, 26);
+            this.gcThongTin.Location = new System.Drawing.Point(3, 22);
             this.gcThongTin.Name = "gcThongTin";
-            this.gcThongTin.Size = new System.Drawing.Size(1356, 27390);
+            this.gcThongTin.Size = new System.Drawing.Size(1356, 17523);
             this.gcThongTin.TabIndex = 1;
             this.gcThongTin.Text = "Thông tin";
             // 
@@ -305,9 +272,9 @@ namespace QLVT
             this.panelControl1.Controls.Add(this.gbCTPN);
             this.panelControl1.Controls.Add(this.gbPN);
             this.panelControl1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelControl1.Location = new System.Drawing.Point(2, 28);
+            this.panelControl1.Location = new System.Drawing.Point(2, 23);
             this.panelControl1.Name = "panelControl1";
-            this.panelControl1.Size = new System.Drawing.Size(1554, 27360);
+            this.panelControl1.Size = new System.Drawing.Size(1554, 17498);
             this.panelControl1.TabIndex = 0;
             // 
             // gbCTPN
@@ -317,9 +284,9 @@ namespace QLVT
             this.gbCTPN.Controls.Add(this.comboBox1);
             this.gbCTPN.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbCTPN.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbCTPN.Location = new System.Drawing.Point(787, 2);
+            this.gbCTPN.Location = new System.Drawing.Point(724, 2);
             this.gbCTPN.Name = "gbCTPN";
-            this.gbCTPN.Size = new System.Drawing.Size(765, 27356);
+            this.gbCTPN.Size = new System.Drawing.Size(828, 17494);
             this.gbCTPN.TabIndex = 1;
             this.gbCTPN.TabStop = false;
             this.gbCTPN.Text = "Chi Tiết Phiếu Nhập";
@@ -332,10 +299,10 @@ namespace QLVT
             this.SOLUONG,
             this.DONGIA});
             this.gcCTPN.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcCTPN.Location = new System.Drawing.Point(3, 26);
+            this.gcCTPN.Location = new System.Drawing.Point(3, 22);
             this.gcCTPN.Name = "gcCTPN";
             this.gcCTPN.RowHeadersWidth = 51;
-            this.gcCTPN.Size = new System.Drawing.Size(759, 27327);
+            this.gcCTPN.Size = new System.Drawing.Size(822, 17469);
             this.gcCTPN.TabIndex = 10;
             // 
             // MAHH
@@ -365,7 +332,7 @@ namespace QLVT
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(177, 1308);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(207, 30);
+            this.comboBox2.Size = new System.Drawing.Size(207, 27);
             this.comboBox2.TabIndex = 9;
             // 
             // comboBox1
@@ -374,7 +341,7 @@ namespace QLVT
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(169, 1300);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(207, 30);
+            this.comboBox1.Size = new System.Drawing.Size(207, 27);
             this.comboBox1.TabIndex = 8;
             // 
             // gbPN
@@ -393,7 +360,7 @@ namespace QLVT
             this.gbPN.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbPN.Location = new System.Drawing.Point(2, 2);
             this.gbPN.Name = "gbPN";
-            this.gbPN.Size = new System.Drawing.Size(785, 27356);
+            this.gbPN.Size = new System.Drawing.Size(722, 17494);
             this.gbPN.TabIndex = 0;
             this.gbPN.TabStop = false;
             this.gbPN.Text = "Phiếu Nhập";
@@ -404,7 +371,7 @@ namespace QLVT
             this.cmbDonDatHang.FormattingEnabled = true;
             this.cmbDonDatHang.Location = new System.Drawing.Point(248, 288);
             this.cmbDonDatHang.Name = "cmbDonDatHang";
-            this.cmbDonDatHang.Size = new System.Drawing.Size(233, 30);
+            this.cmbDonDatHang.Size = new System.Drawing.Size(233, 27);
             this.cmbDonDatHang.TabIndex = 6;
             this.cmbDonDatHang.SelectedIndexChanged += new System.EventHandler(this.cmbDonDatHang_SelectedIndexChanged);
             // 
@@ -415,7 +382,7 @@ namespace QLVT
             this.txtNhanVien.Name = "txtNhanVien";
             this.txtNhanVien.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNhanVien.Properties.Appearance.Options.UseFont = true;
-            this.txtNhanVien.Size = new System.Drawing.Size(233, 28);
+            this.txtNhanVien.Size = new System.Drawing.Size(233, 26);
             this.txtNhanVien.TabIndex = 4;
             // 
             // dateNgayLap
@@ -430,7 +397,7 @@ namespace QLVT
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dateNgayLap.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.dateNgayLap.Size = new System.Drawing.Size(233, 28);
+            this.dateNgayLap.Size = new System.Drawing.Size(233, 26);
             this.dateNgayLap.TabIndex = 4;
             // 
             // txtSoPn
@@ -440,7 +407,7 @@ namespace QLVT
             this.txtSoPn.Name = "txtSoPn";
             this.txtSoPn.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSoPn.Properties.Appearance.Options.UseFont = true;
-            this.txtSoPn.Size = new System.Drawing.Size(233, 28);
+            this.txtSoPn.Size = new System.Drawing.Size(233, 26);
             this.txtSoPn.TabIndex = 4;
             // 
             // cmbKho
@@ -449,22 +416,22 @@ namespace QLVT
             this.cmbKho.FormattingEnabled = true;
             this.cmbKho.Location = new System.Drawing.Point(248, 217);
             this.cmbKho.Name = "cmbKho";
-            this.cmbKho.Size = new System.Drawing.Size(233, 30);
+            this.cmbKho.Size = new System.Drawing.Size(233, 27);
             this.cmbKho.TabIndex = 4;
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.gcThongTin);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(0, 51);
+            this.groupBox1.Location = new System.Drawing.Point(0, 45);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1362, 27419);
+            this.groupBox1.Size = new System.Drawing.Size(1362, 17548);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
             // 
             // FormThemPhieuNhap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1362, 479);
             this.Controls.Add(this.groupBox1);
@@ -507,10 +474,7 @@ namespace QLVT
         private DevExpress.XtraBars.BarDockControl barDockControlLeft;
         private DevExpress.XtraBars.BarDockControl barDockControlRight;
         private DevExpress.XtraBars.Bar bar4;
-        private DevExpress.XtraBars.BarButtonItem btnXOA;
         private DevExpress.XtraBars.BarButtonItem btnGHI;
-        private DevExpress.XtraBars.BarButtonItem btnHOANTAC;
-        private DevExpress.XtraBars.BarButtonItem btnLAMMOI;
         private DevExpress.XtraBars.BarButtonItem btnTHOAT;
         private DevExpress.XtraBars.BarButtonItem btnCheDoDonDatHang;
         private DevExpress.XtraBars.BarButtonItem btnCheDoChiTietDonDatHang;
