@@ -87,7 +87,7 @@ namespace QLVT
                 cmbChiNhanh.Enabled = false;
 
                 this.btnTHEM.Enabled = true;
-                this.btnXOA.Enabled = true;
+                this.btnXOA.Enabled = false;
                 this.btnSua.Enabled = true;
 
                 this.btnHOANTAC.Enabled = false;
@@ -270,7 +270,24 @@ namespace QLVT
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            if(gvPN.FocusedRowHandle >= 0)
+            viTri = bdsPhieuNhap.Position;
+            
+            /*Step 1*/
+            DataRowView drv = ((DataRowView)bdsPhieuNhap[bdsPhieuNhap.Position]);
+
+           
+            String maNhanVien = drv["MANV"].ToString().Trim();
+            if(maNhanVien == "" || maNhanVien == null)
+            {
+                MessageBox.Show("Vui lòng chọn phiếu nhập", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }    
+            if (Program.username != maNhanVien)
+            {
+                MessageBox.Show("Bạn không thể sửa phiếu do người khác lập", "Thông báo", MessageBoxButtons.OK);
+                return;
+            }
+            if (gvPN.FocusedRowHandle >= 0)
             {
                 object currentRow = gvPN.GetFocusedRow();
 
@@ -338,6 +355,216 @@ namespace QLVT
 
             int n = Program.ExecSqlNonQuery(cauTruyVan);
            
+        }
+
+        private void btnXOA_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            DataRowView drv;
+            string cauTruyVanHoanTac = "";
+            string mahh = "";
+            string soluong = "";
+            string cheDo = (btnMENU.Links[0].Caption == "Phiếu Nhập") ? "Phiếu Nhập" : "Chi Tiết Phiếu Nhập";
+
+
+
+            if (cheDo == "Phiếu Nhập")
+            {
+                drv = ((DataRowView)bdsPhieuNhap[bdsPhieuNhap.Position]);
+                String maNhanVien = drv["MANV"].ToString().Trim();
+                if (Program.username != maNhanVien)
+                {
+                    MessageBox.Show("Không thể xóa phiếu nhập không phải do mình tạo", "Thông báo", MessageBoxButtons.OK);
+                    return;
+                }
+
+                if (bds_CTPhieuNhap.Count > 0)
+                {
+                    MessageBox.Show("Không thể xóa phiếu nhập vì có chi tiết phiếu nhập", "Thông báo", MessageBoxButtons.OK);
+                    return;
+                }
+
+                drv = ((DataRowView)bdsPhieuNhap[bdsPhieuNhap.Position]);
+                DateTime ngay = ((DateTime)drv["NGAYLAP"]);
+
+                cauTruyVanHoanTac = "INSERT INTO DBO.PHIEUNHAP(SOPN, NGAYLAP, MADDH, MANV, MAKHO) " +
+                    "VALUES( '" + drv["SOPN"].ToString().Trim() + "', '" +
+                    ngay.ToString("yyyy-MM-dd") + "', '" +
+                    drv["MADDH"].ToString().Trim() + "', '" +
+                    drv["MANV"].ToString().Trim() + "', '" +
+                    drv["MAKHO"].ToString().Trim() + "')";
+
+            }
+
+            if (cheDo == "Chi Tiết Phiếu Nhập")
+            {
+                drv = ((DataRowView)bdsPhieuNhap[bdsPhieuNhap.Position]);
+                String maNhanVien = drv["MANV"].ToString().Trim();
+                if (Program.username != maNhanVien)
+                {
+                    MessageBox.Show("Bạn không xóa chi tiết phiếu nhập không phải do mình tạo", "Thông báo", MessageBoxButtons.OK);
+                    return;
+                }
+
+
+                drv = ((DataRowView)bds_CTPhieuNhap[bds_CTPhieuNhap.Position]);
+                cauTruyVanHoanTac = "INSERT INTO DBO.CTPN(SOPN, MAHH, SOLUONG, DONGIA) " +
+                    "VALUES('" + drv["SOPN"].ToString().Trim() + "', '" +
+                    drv["MAHH"].ToString().Trim() + "', " +
+                    drv["SOLUONG"].ToString().Trim() + ", " +
+                    drv["DONGIA"].ToString().Trim() + ")";
+                mahh = drv["MAHH"].ToString().Trim();
+                soluong = drv["SOLUONG"].ToString().Trim();
+            }
+
+            undoList.Push(cauTruyVanHoanTac);
+           
+            if (MessageBox.Show("Bạn có chắc chắn muốn xóa không ?", "Thông báo",
+                MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                try
+                {
+                    /*Step 3*/
+                    viTri = bds.Position;
+                    if (cheDo == "Phiếu Nhập")
+                    {
+                        bdsPhieuNhap.RemoveCurrent();
+                    }
+                    if (cheDo == "Chi Tiết Phiếu Nhập")
+                    {
+                        bds_CTPhieuNhap.RemoveCurrent();
+                        string capnhatsl = "EXEC sp_CapNhatSoLuongVatTu 'EXPORT','" + mahh + "', " + soluong;
+
+
+                        int n = Program.ExecSqlNonQuery(capnhatsl);
+                    }
+
+
+                    this.pHIEUNHAPTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.pHIEUNHAPTableAdapter.Update(this.DS.PHIEUNHAP);
+
+                    this.cT_PHIEUNHAPTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.cT_PHIEUNHAPTableAdapter.Update(this.DS.CT_PHIEUNHAP);
+
+                    
+                    dangThemMoi = false;
+                    MessageBox.Show("Xóa thành công ", "Thông báo", MessageBoxButtons.OK);
+                    this.btnHOANTAC.Enabled = true;
+                }
+                catch (Exception ex)
+                {
+                    /*Step 4*/
+                    MessageBox.Show("Lỗi xóa phiếu nhập. Hãy thử lại\n" + ex.Message, "Thông báo", MessageBoxButtons.OK);
+                    this.pHIEUNHAPTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.pHIEUNHAPTableAdapter.Update(this.DS.PHIEUNHAP);
+
+                    this.cT_PHIEUNHAPTableAdapter.Connection.ConnectionString = Program.connstr;
+                    this.cT_PHIEUNHAPTableAdapter.Update(this.DS.CT_PHIEUNHAP);
+                    bds.Position = viTri;
+                    return;
+                }
+            }
+            else
+            {
+                undoList.Pop();
+            }
+        }
+       
+
+        private void btnCheDoPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            /*Step 0*/
+            btnMENU.Links[0].Caption = "Phiếu Nhập";
+
+            /*Step 1*/
+            bds = bdsPhieuNhap;
+            gc = gcPN;
+          
+            /*Bat cac grid control len*/
+            gcPN.Enabled = true;
+            gcCTPN.Enabled = false;
+
+
+            /*Step 3*/
+            /*CONG TY chi xem du lieu*/
+            if (Program.mGroup == "CONGTY")
+            {
+                cmbChiNhanh.Enabled = true;
+
+                this.btnTHEM.Enabled = false;
+                this.btnXOA.Enabled = false;
+                this.btnSua.Enabled = false;
+
+                this.btnHOANTAC.Enabled = false;
+                this.btnLAMMOI.Enabled = true;
+                this.btnMENU.Enabled = true;
+                this.btnTHOAT.Enabled = true;
+
+            }
+
+            /* CHI NHANH & USER co the xem - xoa - sua du lieu nhung khong the 
+             chuyen sang chi nhanh khac*/
+            if (Program.mGroup == "CHINHANH" || Program.mGroup == "USER")
+            {
+                cmbChiNhanh.Enabled = false;
+
+                this.btnTHEM.Enabled = true;
+                bool turnOn = (bdsPhieuNhap.Count > 0) ? true : false;
+                this.btnXOA.Enabled = turnOn;
+                this.btnSua.Enabled = true;
+
+                this.btnHOANTAC.Enabled = false;
+                this.btnLAMMOI.Enabled = true;
+                this.btnMENU.Enabled = true;
+                this.btnTHOAT.Enabled = true;
+
+            }
+        }
+
+        private void btnCheDoChiTietPhieuNhap_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            /*Step 0*/
+            btnMENU.Links[0].Caption = "Chi Tiết Phiếu Nhập";
+
+            /*Step 1*/
+            bds = bds_CTPhieuNhap;
+            gc = gcPN;
+
+
+            /*Bat cac grid control len*/
+            gcPN.Enabled = false;
+            gcCTPN.Enabled = true;
+
+            /*Step 3*/
+            /*CONG TY chi xem du lieu*/
+            if (Program.mGroup == "CONGTY")
+            {
+                cmbChiNhanh.Enabled = true;
+
+                this.btnTHEM.Enabled = false;
+                this.btnXOA.Enabled = false;
+                this.btnSua.Enabled = false;
+                this.btnHOANTAC.Enabled = false;
+                this.btnLAMMOI.Enabled = true;
+                this.btnMENU.Enabled = true;
+                this.btnTHOAT.Enabled = true;
+            }
+
+            /* CHI NHANH & USER co the xem - xoa - sua du lieu nhung khong the 
+             chuyen sang chi nhanh khac*/
+            if (Program.mGroup == "CHINHANH" || Program.mGroup == "USER")
+            {
+                cmbChiNhanh.Enabled = false;
+
+                this.btnTHEM.Enabled = true;
+                bool turnOn = (bds_CTPhieuNhap.Count > 0) ? true : false;
+                this.btnXOA.Enabled = turnOn;
+                this.btnSua.Enabled = false;
+
+                this.btnHOANTAC.Enabled = false;
+                this.btnLAMMOI.Enabled = true;
+                this.btnMENU.Enabled = true;
+                this.btnTHOAT.Enabled = true;
+            }
         }
     }
 }

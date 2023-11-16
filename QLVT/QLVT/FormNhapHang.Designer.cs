@@ -40,8 +40,8 @@ namespace QLVT
             this.btnHOANTAC = new DevExpress.XtraBars.BarButtonItem();
             this.btnLAMMOI = new DevExpress.XtraBars.BarButtonItem();
             this.btnMENU = new DevExpress.XtraBars.BarSubItem();
-            this.btnCheDoDonDatHang = new DevExpress.XtraBars.BarButtonItem();
-            this.btnCheDoChiTietDonDatHang = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCheDoDonPhieuNhap = new DevExpress.XtraBars.BarButtonItem();
+            this.btnCheDoChiTietPhieuNhap = new DevExpress.XtraBars.BarButtonItem();
             this.btnTHOAT = new DevExpress.XtraBars.BarButtonItem();
             this.bar3 = new DevExpress.XtraBars.Bar();
             this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
@@ -115,8 +115,8 @@ namespace QLVT
             this.btnLAMMOI,
             this.btnTHOAT,
             this.btnMENU,
-            this.btnCheDoDonDatHang,
-            this.btnCheDoChiTietDonDatHang});
+            this.btnCheDoDonPhieuNhap,
+            this.btnCheDoChiTietPhieuNhap});
             this.barManager1.MainMenu = this.bar2;
             this.barManager1.MaxItemId = 10;
             this.barManager1.StatusBar = this.bar3;
@@ -170,6 +170,7 @@ namespace QLVT
             this.btnXOA.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnXOA.ImageOptions.Image")));
             this.btnXOA.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnXOA.ImageOptions.LargeImage")));
             this.btnXOA.Name = "btnXOA";
+            this.btnXOA.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnXOA_ItemClick);
             // 
             // btnHOANTAC
             // 
@@ -195,25 +196,27 @@ namespace QLVT
             this.btnMENU.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnMENU.ImageOptions.Image")));
             this.btnMENU.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnMENU.ImageOptions.LargeImage")));
             this.btnMENU.LinksPersistInfo.AddRange(new DevExpress.XtraBars.LinkPersistInfo[] {
-            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnCheDoDonDatHang, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
-            new DevExpress.XtraBars.LinkPersistInfo(this.btnCheDoChiTietDonDatHang)});
+            new DevExpress.XtraBars.LinkPersistInfo(DevExpress.XtraBars.BarLinkUserDefines.PaintStyle, this.btnCheDoDonPhieuNhap, DevExpress.XtraBars.BarItemPaintStyle.CaptionGlyph),
+            new DevExpress.XtraBars.LinkPersistInfo(this.btnCheDoChiTietPhieuNhap)});
             this.btnMENU.Name = "btnMENU";
             // 
-            // btnCheDoDonDatHang
+            // btnCheDoDonPhieuNhap
             // 
-            this.btnCheDoDonDatHang.Caption = "Đơn Đặt Hàng";
-            this.btnCheDoDonDatHang.Id = 8;
-            this.btnCheDoDonDatHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCheDoDonDatHang.ImageOptions.Image")));
-            this.btnCheDoDonDatHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCheDoDonDatHang.ImageOptions.LargeImage")));
-            this.btnCheDoDonDatHang.Name = "btnCheDoDonDatHang";
+            this.btnCheDoDonPhieuNhap.Caption = "Phiếu Nhập";
+            this.btnCheDoDonPhieuNhap.Id = 8;
+            this.btnCheDoDonPhieuNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCheDoDonDatHang.ImageOptions.Image")));
+            this.btnCheDoDonPhieuNhap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCheDoDonDatHang.ImageOptions.LargeImage")));
+            this.btnCheDoDonPhieuNhap.Name = "btnCheDoDonPhieuNhap";
+            this.btnCheDoDonPhieuNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCheDoPhieuNhap_ItemClick);
             // 
-            // btnCheDoChiTietDonDatHang
+            // btnCheDoChiTietPhieuNhap
             // 
-            this.btnCheDoChiTietDonDatHang.Caption = "Chi Tiết Đơn Đặt Hàng";
-            this.btnCheDoChiTietDonDatHang.Id = 9;
-            this.btnCheDoChiTietDonDatHang.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCheDoChiTietDonDatHang.ImageOptions.Image")));
-            this.btnCheDoChiTietDonDatHang.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCheDoChiTietDonDatHang.ImageOptions.LargeImage")));
-            this.btnCheDoChiTietDonDatHang.Name = "btnCheDoChiTietDonDatHang";
+            this.btnCheDoChiTietPhieuNhap.Caption = "Chi Tiết Phiếu Nhập";
+            this.btnCheDoChiTietPhieuNhap.Id = 9;
+            this.btnCheDoChiTietPhieuNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCheDoChiTietDonDatHang.ImageOptions.Image")));
+            this.btnCheDoChiTietPhieuNhap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCheDoChiTietDonDatHang.ImageOptions.LargeImage")));
+            this.btnCheDoChiTietPhieuNhap.Name = "btnCheDoChiTietPhieuNhap";
+            this.btnCheDoChiTietPhieuNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCheDoChiTietPhieuNhap_ItemClick);
             // 
             // btnTHOAT
             // 
@@ -595,8 +598,8 @@ namespace QLVT
         private DevExpress.XtraBars.BarButtonItem btnLAMMOI;
         private DevExpress.XtraBars.BarButtonItem btnTHOAT;
         private DevExpress.XtraBars.BarSubItem btnMENU;
-        private DevExpress.XtraBars.BarButtonItem btnCheDoDonDatHang;
-        private DevExpress.XtraBars.BarButtonItem btnCheDoChiTietDonDatHang;
+        private DevExpress.XtraBars.BarButtonItem btnCheDoDonPhieuNhap;
+        private DevExpress.XtraBars.BarButtonItem btnCheDoChiTietPhieuNhap;
         private DS DS;
         private DSTableAdapters.TableAdapterManager tableAdapterManager;
         private DSTableAdapters.PHIEUNHAPTableAdapter pHIEUNHAPTableAdapter;

@@ -72,58 +72,8 @@ namespace QLVT
                 setcmb(maddh);
             }
 
-            cmbDonDatHang.Invoke(new EventHandler(cmbDonDatHang_SelectedIndexChanged), cmbDonDatHang, EventArgs.Empty);
+            cmbDonDatHang.Invoke(new EventHandler(cmbDonDatHang_SelectionChangeCommitted), cmbDonDatHang, EventArgs.Empty);
             
-        }
-
-        private void cmbDonDatHang_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cmbDonDatHang.SelectedValue == null)
-                return;
-            // Lấy giá trị đã chọn từ ComboBox
-            string maDDH = cmbDonDatHang.SelectedValue.ToString().Trim();
-            gcCTPN.Columns[0].ReadOnly = true;
-            if (edit == false)
-            {
-                String cauTruyVan =
-                   "DECLARE	@result int " +
-                   "EXEC @result = sp_LayChiTietCuaMotDonDatHang '" +
-                   maDDH + "' " +
-                   "SELECT 'Value' = @result";
-                SqlCommand sqlCommand = new SqlCommand(cauTruyVan, Program.conn);
-                try
-                {
-
-                    DataTable dt = Program.ExecSqlDataTable(cauTruyVan);
-                    gcCTPN.Rows.Clear();
-                    foreach (DataRow row in dt.Rows)
-                    {
-                        // Tạo một dòng mới trong DataGridView
-                        int rowIndex = gcCTPN.Rows.Add();
-
-                        // Gán giá trị từ DataTable vào các cột tương ứng trong DataGridView
-                        gcCTPN.Rows[rowIndex].Cells["MAHH"].Value = row["MAHH"];
-                        gcCTPN.Rows[rowIndex].Cells["SOLUONG"].Value = row["SOLUONG"];
-                        gcCTPN.Rows[rowIndex].Cells["DONGIA"].Value = row["DONGIA"];
-                    }
-                    /*gcCTPN.DataSource = dt;*/
-
-                    gcCTPN.Columns["MAHH"].DataPropertyName = "MAHH";
-                    gcCTPN.Columns["SOLUONG"].DataPropertyName = "SOLUONG";
-                    gcCTPN.Columns["DONGIA"].DataPropertyName = "DONGIA";
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Thực thi database thất bại!\n\n" + ex.Message, "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Console.WriteLine(ex.Message);
-                    return;
-                }
-            }    
-           
-            
-            gcCTPN.AllowUserToAddRows = false;
         }
 
         private void btnGHI_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -270,6 +220,7 @@ namespace QLVT
             }
             edit = true;
             flag = true;
+            gcCTPN.KeyDown += gcCTPN_KeyDown;
         }
         private void setcmb(string maddh)
         {
@@ -279,6 +230,77 @@ namespace QLVT
                 cmbDonDatHang.SelectedValue = maddh;
             }
 
+        }
+        private void gcCTPN_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                e.Handled = true; // Ngăn xóa dữ liệu
+            }
+        }
+
+        private void btnTHOAT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void cmbDonDatHang_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (cmbDonDatHang.SelectedValue == null)
+                return;
+
+            // Lấy giá trị đã chọn từ ComboBox
+            string maDDH = cmbDonDatHang.SelectedValue.ToString().Trim();
+            if (gcCTPN.ColumnCount > 0)
+            {
+                // Truy cập vào cột
+                gcCTPN.Columns[0].ReadOnly = true;
+            }
+            /* gcCTPN.Columns[0].ReadOnly = true;*/
+            if (edit == false)
+            {
+                String cauTruyVan =
+                   "DECLARE	@result int " +
+                   "EXEC @result = sp_LayChiTietCuaMotDonDatHang '" +
+                   maDDH + "' " +
+                   "SELECT 'Value' = @result";
+                SqlCommand sqlCommand = new SqlCommand(cauTruyVan, Program.conn);
+                try
+                {
+
+                    DataTable dt = Program.ExecSqlDataTable(cauTruyVan);
+                    gcCTPN.Rows.Clear();
+                    if (dt.Rows.Count > 0)
+                    {
+                        foreach (DataRow row in dt.Rows)
+                        {
+                            // Tạo một dòng mới trong DataGridView
+                            int rowIndex = gcCTPN.Rows.Add();
+
+                            // Gán giá trị từ DataTable vào các cột tương ứng trong DataGridView
+                            gcCTPN.Rows[rowIndex].Cells["MAHH"].Value = row["MAHH"];
+                            gcCTPN.Rows[rowIndex].Cells["SOLUONG"].Value = row["SOLUONG"];
+                            gcCTPN.Rows[rowIndex].Cells["DONGIA"].Value = row["DONGIA"];
+                        }
+                        /*gcCTPN.DataSource = dt;*/
+
+                        gcCTPN.Columns["MAHH"].DataPropertyName = "MAHH";
+                        gcCTPN.Columns["SOLUONG"].DataPropertyName = "SOLUONG";
+                        gcCTPN.Columns["DONGIA"].DataPropertyName = "DONGIA";
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Thực thi database thất bại!\n\n" + ex.Message, "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine(ex.Message);
+                    return;
+                }
+            }
+
+
+            gcCTPN.AllowUserToAddRows = false;
         }
     }
 }

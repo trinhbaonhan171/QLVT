@@ -186,6 +186,7 @@ namespace QLVT
             this.btnTHOAT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTHOAT.ImageOptions.Image")));
             this.btnTHOAT.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTHOAT.ImageOptions.LargeImage")));
             this.btnTHOAT.Name = "btnTHOAT";
+            this.btnTHOAT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTHOAT_ItemClick);
             // 
             // bar3
             // 
@@ -373,7 +374,7 @@ namespace QLVT
             this.cmbDonDatHang.Name = "cmbDonDatHang";
             this.cmbDonDatHang.Size = new System.Drawing.Size(233, 27);
             this.cmbDonDatHang.TabIndex = 6;
-            this.cmbDonDatHang.SelectedIndexChanged += new System.EventHandler(this.cmbDonDatHang_SelectedIndexChanged);
+            this.cmbDonDatHang.SelectionChangeCommitted += new System.EventHandler(this.cmbDonDatHang_SelectionChangeCommitted);
             // 
             // txtNhanVien
             // 
