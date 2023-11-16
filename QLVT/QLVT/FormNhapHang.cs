@@ -253,8 +253,8 @@ namespace QLVT
 
                     /*cập nhật lại trạng thái thêm mới */
                     dangThemMoi = false;
-                    scope.Complete();
                     MessageBox.Show("Ghi thành công", "Thông báo", MessageBoxButtons.OK);
+                    scope.Complete();
                 }
                 catch (Exception ex)
                 {
@@ -565,6 +565,11 @@ namespace QLVT
                 this.btnMENU.Enabled = true;
                 this.btnTHOAT.Enabled = true;
             }
+        }
+
+        private void btnTHOAT_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

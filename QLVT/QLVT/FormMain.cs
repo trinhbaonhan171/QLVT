@@ -253,7 +253,7 @@ namespace QLVT
         private void btnXuatVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
 
-            /*Form f = this.CheckExists(typeof(FormHoaDon));
+            Form f = this.CheckExists(typeof(FormHoaDon));
             if (f != null)
             {
                 f.Activate();
@@ -263,7 +263,7 @@ namespace QLVT
                 FormHoaDon form = new FormHoaDon();
                 form.MdiParent = this;
                 form.Show();
-            }*/
+            }
         }
 
         private void btnNhapVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)

@@ -204,8 +204,8 @@ namespace QLVT
             // 
             this.btnCheDoDonPhieuNhap.Caption = "Phiếu Nhập";
             this.btnCheDoDonPhieuNhap.Id = 8;
-            this.btnCheDoDonPhieuNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCheDoDonDatHang.ImageOptions.Image")));
-            this.btnCheDoDonPhieuNhap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCheDoDonDatHang.ImageOptions.LargeImage")));
+            this.btnCheDoDonPhieuNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCheDoDonPhieuNhap.ImageOptions.Image")));
+            this.btnCheDoDonPhieuNhap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCheDoDonPhieuNhap.ImageOptions.LargeImage")));
             this.btnCheDoDonPhieuNhap.Name = "btnCheDoDonPhieuNhap";
             this.btnCheDoDonPhieuNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCheDoPhieuNhap_ItemClick);
             // 
@@ -213,8 +213,8 @@ namespace QLVT
             // 
             this.btnCheDoChiTietPhieuNhap.Caption = "Chi Tiết Phiếu Nhập";
             this.btnCheDoChiTietPhieuNhap.Id = 9;
-            this.btnCheDoChiTietPhieuNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCheDoChiTietDonDatHang.ImageOptions.Image")));
-            this.btnCheDoChiTietPhieuNhap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCheDoChiTietDonDatHang.ImageOptions.LargeImage")));
+            this.btnCheDoChiTietPhieuNhap.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnCheDoChiTietPhieuNhap.ImageOptions.Image")));
+            this.btnCheDoChiTietPhieuNhap.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnCheDoChiTietPhieuNhap.ImageOptions.LargeImage")));
             this.btnCheDoChiTietPhieuNhap.Name = "btnCheDoChiTietPhieuNhap";
             this.btnCheDoChiTietPhieuNhap.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnCheDoChiTietPhieuNhap_ItemClick);
             // 
@@ -225,6 +225,7 @@ namespace QLVT
             this.btnTHOAT.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("btnTHOAT.ImageOptions.Image")));
             this.btnTHOAT.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("btnTHOAT.ImageOptions.LargeImage")));
             this.btnTHOAT.Name = "btnTHOAT";
+            this.btnTHOAT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.btnTHOAT_ItemClick);
             // 
             // bar3
             // 

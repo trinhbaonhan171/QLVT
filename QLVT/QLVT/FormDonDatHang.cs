@@ -8,6 +8,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 using System.Windows.Forms;
 using DevExpress.XtraGrid;
 
@@ -635,91 +636,92 @@ namespace QLVT
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            /*****************************************************************
-             * tat ca cac truong hop khac ko can quan tam !!
-             *****************************************************************/
-
             else
             {
                 DialogResult dr = MessageBox.Show("Bạn có chắc muốn ghi dữ liệu vào cơ sở dữ liệu ?", "Thông báo",
                          MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                 if (dr == DialogResult.OK)
                 {
-                    try
+                    using (TransactionScope scope = new TransactionScope())
                     {
-                      
-                        /*TH1: them moi don dat hang*/
-                        if (cheDo == "Đơn Đặt Hàng")
+                        try
                         {
-                            if(dangThemMoi == true)
-                            {
-                                cauTruyVanHoanTac =
-                               "DELETE FROM DBO.DONDH " +
-                               "WHERE MADDH = '" + maDonDatHang + "'";
-                            }    
-                            ((DataRowView)(bdsDDH.Current))["MANCC"] = cmbNhaCC.SelectedValue.ToString().Trim();
-                            ((DataRowView)(bdsDDH.Current))["MAKHO"] = cmbKho.SelectedValue.ToString().Trim();
-                           
-                        }
 
-                        /*TH2: them moi chi tiet don hang*/
-                        if (cheDo == "Chi Tiết Đơn Đặt Hàng")
+                            /*TH1: them moi don dat hang*/
+                            if (cheDo == "Đơn Đặt Hàng")
+                            {
+                                if (dangThemMoi == true)
+                                {
+                                    cauTruyVanHoanTac =
+                                   "DELETE FROM DBO.DONDH " +
+                                   "WHERE MADDH = '" + maDonDatHang + "'";
+                                }
+                                ((DataRowView)(bdsDDH.Current))["MANCC"] = cmbNhaCC.SelectedValue.ToString().Trim();
+                                ((DataRowView)(bdsDDH.Current))["MAKHO"] = cmbKho.SelectedValue.ToString().Trim();
+
+                            }
+
+                            /*TH2: them moi chi tiet don hang*/
+                            if (cheDo == "Chi Tiết Đơn Đặt Hàng")
+                            {
+                                if (dangThemMoi == true)
+                                {
+                                    cauTruyVanHoanTac =
+                                    "DELETE FROM DBO.CT_DONDH " +
+                                    "WHERE MADDH = '" + maDonDatHang + "' " +
+                                    "AND MAHH = '" + cmbHH.SelectedValue.ToString().Trim() + "'";
+                                }
+                                /*Gan tu dong may truong du lieu nay*/
+                                ((DataRowView)(bdsCTDDH.Current))["MADDH"] = ((DataRowView)(bdsDDH.Current))["MADDH"];
+                                ((DataRowView)(bdsCTDDH.Current))["MAHH"] = cmbHH.SelectedValue.ToString().Trim();
+                                ((DataRowView)(bdsCTDDH.Current))["SOLUONG"] =
+                                    (int)txtSoLuong.Value;
+                                ((DataRowView)(bdsCTDDH.Current))["DONGIA"] =
+                                    (float)txtDonGia.Value;
+
+                            }
+
+                            /*TH3: chinh sua don hang */
+                            /*TH4: chinh sua chi tiet don hang*/
+                            undoList.Push(cauTruyVanHoanTac);
+
+                            this.bdsDDH.EndEdit();
+                            this.bdsCTDDH.EndEdit();
+
+
+
+                            // Cập nhật lại DataTable trong DataSet
+                            this.dONDHTableAdapter.Update(this.DS.DONDH);
+
+                            // Cập nhật lại DataTable trong DataSet
+                            this.cT_DONDHTableAdapter.Update(this.DS.CT_DONDH);
+
+                            this.btnTHEM.Enabled = true;
+                            this.btnXOA.Enabled = true;
+                            this.btnGHI.Enabled = true;
+
+                            this.btnHOANTAC.Enabled = true;
+                            this.btnLAMMOI.Enabled = true;
+                            this.btnMENU.Enabled = true;
+                            this.btnTHOAT.Enabled = true;
+
+                            //this.groupBoxDonDatHang.Enabled = false;
+
+                            /*cập nhật lại trạng thái thêm mới cho chắc*/
+                            dangThemMoi = false;
+                            MessageBox.Show("Ghi thành công", "Thông báo", MessageBoxButtons.OK);
+                            scope.Complete();
+                        }
+                        catch (Exception ex)
                         {
-                            if(dangThemMoi == true)
-                            {
-                                cauTruyVanHoanTac =
-                                "DELETE FROM DBO.CT_DONDH " +
-                                "WHERE MADDH = '" + maDonDatHang + "' " +
-                                "AND MAHH = '" + cmbHH.SelectedValue.ToString().Trim() + "'";
-                            }    
-                            /*Gan tu dong may truong du lieu nay*/
-                            ((DataRowView)(bdsCTDDH.Current))["MADDH"] = ((DataRowView)(bdsDDH.Current))["MADDH"];
-                            ((DataRowView)(bdsCTDDH.Current))["MAHH"] = cmbHH.SelectedValue.ToString().Trim();
-                            ((DataRowView)(bdsCTDDH.Current))["SOLUONG"] =
-                                txtSoLuong.Value;
-                            ((DataRowView)(bdsCTDDH.Current))["DONGIA"] =
-                                (int)txtDonGia.Value;
-                            
+                            Console.WriteLine(ex.Message);
+                            bds.RemoveCurrent();
+                            MessageBox.Show("Da xay ra loi !\n\n" + ex.Message, "Lỗi",
+                                MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return;
                         }
-
-                        /*TH3: chinh sua don hang */
-                        /*TH4: chinh sua chi tiet don hang*/
-                        undoList.Push(cauTruyVanHoanTac);
-
-                        this.bdsDDH.EndEdit();
-                        this.bdsCTDDH.EndEdit();
-
-                        
-
-                        // Cập nhật lại DataTable trong DataSet
-                        this.dONDHTableAdapter.Update(this.DS.DONDH);
-
-                        // Cập nhật lại DataTable trong DataSet
-                        this.cT_DONDHTableAdapter.Update(this.DS.CT_DONDH);
-
-                        this.btnTHEM.Enabled = true;
-                        this.btnXOA.Enabled = true;
-                        this.btnGHI.Enabled = true;
-
-                        this.btnHOANTAC.Enabled = true;
-                        this.btnLAMMOI.Enabled = true;
-                        this.btnMENU.Enabled = true;
-                        this.btnTHOAT.Enabled = true;
-
-                        //this.groupBoxDonDatHang.Enabled = false;
-
-                        /*cập nhật lại trạng thái thêm mới cho chắc*/
-                        dangThemMoi = false;
-                        MessageBox.Show("Ghi thành công", "Thông báo", MessageBoxButtons.OK);
-                    }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
-                        bds.RemoveCurrent();
-                        MessageBox.Show("Da xay ra loi !\n\n" + ex.Message, "Lỗi",
-                            MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    }    
+                    
                 }
             }
         }
