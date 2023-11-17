@@ -79,9 +79,33 @@ namespace QLVT
                 this.hOTENNVTableAdapter.Fill(this.dS.HOTENNV);
             }    
         }
+        private bool kiemtradulieu()
+        {
+            DateTime currentDate = DateTime.Now.Date;
 
+            // Kiểm tra tính hợp lệ của dữ liệu
+            DateTime tuNgay = dteTuNgay.DateTime.Date;
+            DateTime toiNgay = dteToiNgay.DateTime.Date;
+            if (tuNgay > toiNgay)
+            {
+                // Ngày bắt đầu (tuNgay) lớn hơn ngày kết thúc (toiNgay)
+                // Thực hiện xử lý khi dữ liệu không hợp lệ
+                MessageBox.Show("Ngày bắt đầu không được lớn hơn ngày kết thúc.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (tuNgay > currentDate || toiNgay > currentDate)
+            {
+                // Ngày bắt đầu (tuNgay) hoặc ngày kết thúc (toiNgay) lớn hơn ngày thực tại
+                // Thực hiện xử lý khi dữ liệu không hợp lệ
+                MessageBox.Show("Ngày không được lớn hơn ngày hiện tại.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
+        }
         private void btnPreview_Click(object sender, EventArgs e)
         {
+            bool ketQua = kiemtradulieu();
+            if (ketQua == false) return;
             DateTime fromDateTime = (DateTime)dteTuNgay.DateTime;
             string fromDate = fromDateTime.ToString("dd-MM-yyyy");
 
