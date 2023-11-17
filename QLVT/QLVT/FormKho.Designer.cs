@@ -437,7 +437,7 @@ namespace QLVT
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormKho";
-            this.Text = "FormNhanVien";
+            this.Text = "FormKho";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormKho_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();

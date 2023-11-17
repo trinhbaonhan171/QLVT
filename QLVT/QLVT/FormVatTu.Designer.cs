@@ -65,14 +65,14 @@ namespace QLVT
             this.colDVT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMALHH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelNhapLieu = new System.Windows.Forms.GroupBox();
-            this.v_DS_MALHHBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.qLVT_DataSet = new QLVT.QLVT_DataSet();
+            this.CB_MaLHH = new System.Windows.Forms.ComboBox();
             this.txt_DVT = new DevExpress.XtraEditors.TextEdit();
             this.txt_TenHH = new DevExpress.XtraEditors.TextEdit();
             this.txt_mahh = new DevExpress.XtraEditors.TextEdit();
+            this.v_DS_MALHHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.qLVT_DataSet = new QLVT.QLVT_DataSet();
             this.v_DS_MALHHTableAdapter = new QLVT.QLVT_DataSetTableAdapters.V_DS_MALHHTableAdapter();
             this.tableAdapterManager1 = new QLVT.QLVT_DataSetTableAdapters.TableAdapterManager();
-            this.CB_MaLHH = new System.Windows.Forms.ComboBox();
             tRANGTHAIXOALabel = new System.Windows.Forms.Label();
             mAHHLabel = new System.Windows.Forms.Label();
             tENHHLabel = new System.Windows.Forms.Label();
@@ -86,11 +86,11 @@ namespace QLVT
             ((System.ComponentModel.ISupportInitialize)(this.gcVatTu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panelNhapLieu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.v_DS_MALHHBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_DVT.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenHH.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_mahh.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_MALHHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // tRANGTHAIXOALabel
@@ -231,7 +231,7 @@ namespace QLVT
             // 
             this.Btn_Thoat_VT.Caption = "Thoát";
             this.Btn_Thoat_VT.Id = 5;
-            this.Btn_Thoat_VT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Btn_Thoat_kho.ImageOptions.SvgImage")));
+            this.Btn_Thoat_VT.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Btn_Thoat_VT.ImageOptions.SvgImage")));
             this.Btn_Thoat_VT.Name = "Btn_Thoat_VT";
             this.Btn_Thoat_VT.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btn_Thoat_VT_ItemClick);
             // 
@@ -305,6 +305,7 @@ namespace QLVT
             this.cmbChiNhanh.Name = "cmbChiNhanh";
             this.cmbChiNhanh.Size = new System.Drawing.Size(420, 27);
             this.cmbChiNhanh.TabIndex = 0;
+            this.cmbChiNhanh.SelectedIndexChanged += new System.EventHandler(this.cmbChiNhanh_SelectedIndexChanged);
             // 
             // dS
             // 
@@ -420,15 +421,14 @@ namespace QLVT
             this.panelNhapLieu.TabIndex = 20;
             this.panelNhapLieu.TabStop = false;
             // 
-            // v_DS_MALHHBindingSource
+            // CB_MaLHH
             // 
-            this.v_DS_MALHHBindingSource.DataMember = "V_DS_MALHH";
-            this.v_DS_MALHHBindingSource.DataSource = this.qLVT_DataSet;
-            // 
-            // qLVT_DataSet
-            // 
-            this.qLVT_DataSet.DataSetName = "QLVT_DataSet";
-            this.qLVT_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.CB_MaLHH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_MaLHH.FormattingEnabled = true;
+            this.CB_MaLHH.Location = new System.Drawing.Point(517, 123);
+            this.CB_MaLHH.Name = "CB_MaLHH";
+            this.CB_MaLHH.Size = new System.Drawing.Size(164, 27);
+            this.CB_MaLHH.TabIndex = 22;
             // 
             // txt_DVT
             // 
@@ -463,6 +463,16 @@ namespace QLVT
             this.txt_mahh.Size = new System.Drawing.Size(140, 26);
             this.txt_mahh.TabIndex = 19;
             // 
+            // v_DS_MALHHBindingSource
+            // 
+            this.v_DS_MALHHBindingSource.DataMember = "V_DS_MALHH";
+            this.v_DS_MALHHBindingSource.DataSource = this.qLVT_DataSet;
+            // 
+            // qLVT_DataSet
+            // 
+            this.qLVT_DataSet.DataSetName = "QLVT_DataSet";
+            this.qLVT_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // v_DS_MALHHTableAdapter
             // 
             this.v_DS_MALHHTableAdapter.ClearBeforeFill = true;
@@ -472,15 +482,6 @@ namespace QLVT
             this.tableAdapterManager1.BackupDataSetBeforeUpdate = false;
             this.tableAdapterManager1.Connection = null;
             this.tableAdapterManager1.UpdateOrder = QLVT.QLVT_DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // CB_MaLHH
-            // 
-            this.CB_MaLHH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CB_MaLHH.FormattingEnabled = true;
-            this.CB_MaLHH.Location = new System.Drawing.Point(517, 123);
-            this.CB_MaLHH.Name = "CB_MaLHH";
-            this.CB_MaLHH.Size = new System.Drawing.Size(164, 27);
-            this.CB_MaLHH.TabIndex = 22;
             // 
             // FormVatTu
             // 
@@ -497,7 +498,7 @@ namespace QLVT
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormVatTu";
-            this.Text = "FormNhanVien";
+            this.Text = "FormVatTu";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FormVatTu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
@@ -510,11 +511,11 @@ namespace QLVT
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panelNhapLieu.ResumeLayout(false);
             this.panelNhapLieu.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.v_DS_MALHHBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_DVT.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_TenHH.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txt_mahh.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.v_DS_MALHHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qLVT_DataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

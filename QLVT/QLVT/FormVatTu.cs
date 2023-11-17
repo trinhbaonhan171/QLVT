@@ -452,5 +452,10 @@ namespace QLVT
         {
             this.Dispose();
         }
+
+        private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

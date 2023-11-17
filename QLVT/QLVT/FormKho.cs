@@ -120,6 +120,8 @@ namespace QLVT
 
         private void cmbChiNhanh_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (cmbChiNhanh.SelectedValue == null)
+                return;
             /*Neu combobox khong co so lieu thi ket thuc luon*/
             if (cmbChiNhanh.SelectedValue.ToString() == "System.Data.DataRowView")
                 return;

@@ -15,7 +15,7 @@ namespace QLVT
         public FormMain()
         {
             InitializeComponent();
-            btnDangNhap.Enabled = true;
+            btnDangNhap.Enabled = false;
             btnDangXuat.Enabled = false;
 
             pageNhapXuat.Visible = false;
@@ -106,7 +106,7 @@ namespace QLVT
             else
             {
                 FormDangNhap form = new FormDangNhap();
-                //form.MdiParent = this;
+                form.MdiParent = this;
                 form.Show();
             }
 
@@ -117,7 +117,7 @@ namespace QLVT
 
         private void btnTaoTaiKhoan_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            /*Form f = this.CheckExists(typeof(FormTaoTaiKhoan));
+            Form f = this.CheckExists(typeof(FormTaoTaiKhoan));
             if (f != null)
             {
                 f.Activate();
@@ -127,7 +127,7 @@ namespace QLVT
                 FormTaoTaiKhoan form = new FormTaoTaiKhoan();
                 //form.MdiParent = this;
                 form.Show();
-            }*/
+            }
         }
 
         private void btnThoat_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
