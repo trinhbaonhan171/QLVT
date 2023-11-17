@@ -291,3 +291,5 @@ D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.FormNhapHang.resources
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.FormHoaDon.resources
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.FormThemPhieuNhap.resources
 D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.csproj.AssemblyReference.cache
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.FormKho.resources
+D:\NHAN\project_QLVT\QLVT\qlvt\QLVT\obj\Debug\QLVT.FormVatTu.resources

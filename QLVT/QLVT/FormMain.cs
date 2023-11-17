@@ -280,5 +280,35 @@ namespace QLVT
                 form.Show();
             }
         }
+
+        private void btnKho_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(FormKho));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormKho form = new FormKho();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
+
+        private void btnVatTu_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            Form f = this.CheckExists(typeof(FormVatTu));
+            if (f != null)
+            {
+                f.Activate();
+            }
+            else
+            {
+                FormVatTu form = new FormVatTu();
+                form.MdiParent = this;
+                form.Show();
+            }
+        }
     }
 }
