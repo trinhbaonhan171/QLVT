@@ -270,6 +270,7 @@ namespace QLVT
 
         private void btnSua_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            dangThemMoi = false;
             viTri = bdsPhieuNhap.Position;
             
             /*Step 1*/
@@ -369,6 +370,12 @@ namespace QLVT
 
             if (cheDo == "Phiếu Nhập")
             {
+                bds = bdsPhieuNhap;
+                if (bds.Count < 1)
+                {
+                    MessageBox.Show("Vui lòng chọn phiếu nhập cần xóa", "Thông báo", MessageBoxButtons.OK);
+                    return;
+                }
                 drv = ((DataRowView)bdsPhieuNhap[bdsPhieuNhap.Position]);
                 String maNhanVien = drv["MANV"].ToString().Trim();
                 if (Program.username != maNhanVien)
@@ -397,6 +404,12 @@ namespace QLVT
 
             if (cheDo == "Chi Tiết Phiếu Nhập")
             {
+                bds = bds_CTPhieuNhap;
+                if (bds.Count < 1)
+                {
+                    MessageBox.Show("Vui lòng chọn chi tiết phiếu nhập cần xóa", "Thông báo", MessageBoxButtons.OK);
+                    return;
+                }
                 drv = ((DataRowView)bdsPhieuNhap[bdsPhieuNhap.Position]);
                 String maNhanVien = drv["MANV"].ToString().Trim();
                 if (Program.username != maNhanVien)
@@ -481,7 +494,7 @@ namespace QLVT
           
             /*Bat cac grid control len*/
             gcPN.Enabled = true;
-            gcCTPN.Enabled = false;
+            gcCTPN.Enabled = true;
 
 
             /*Step 3*/
@@ -531,7 +544,7 @@ namespace QLVT
 
 
             /*Bat cac grid control len*/
-            gcPN.Enabled = false;
+            gcPN.Enabled = true;
             gcCTPN.Enabled = true;
 
             /*Step 3*/

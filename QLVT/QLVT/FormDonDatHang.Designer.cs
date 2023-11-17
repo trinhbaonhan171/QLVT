@@ -67,10 +67,10 @@ namespace QLVT
             this.tableAdapterManager = new QLVT.DSTableAdapters.TableAdapterManager();
             this.gcDDH = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colMADDH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MADDH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMANCC = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMANV = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colNGAYLAP = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MANV = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.NGAYLAP = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMAKHO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.gcThongTin = new DevExpress.XtraEditors.GroupControl();
@@ -90,11 +90,11 @@ namespace QLVT
             this.txtDonGia = new DevExpress.XtraEditors.SpinEdit();
             this.txtSoLuong = new DevExpress.XtraEditors.SpinEdit();
             this.gbDH = new System.Windows.Forms.GroupBox();
+            this.txtMaDonDatHang = new DevExpress.XtraEditors.TextEdit();
             this.cmbNhaCC = new System.Windows.Forms.ComboBox();
             this.cmbKho = new System.Windows.Forms.ComboBox();
             this.txtMaNhanVien = new DevExpress.XtraEditors.TextEdit();
             this.dteNGAY = new DevExpress.XtraEditors.DateEdit();
-            this.txtMaDonDatHang = new DevExpress.XtraEditors.TextEdit();
             this.pHIEUNHAPTableAdapter = new QLVT.DSTableAdapters.PHIEUNHAPTableAdapter();
             this.bdsHangHoa = new System.Windows.Forms.BindingSource(this.components);
             this.bdsKho = new System.Windows.Forms.BindingSource(this.components);
@@ -134,10 +134,10 @@ namespace QLVT
             ((System.ComponentModel.ISupportInitialize)(this.txtDonGia.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).BeginInit();
             this.gbDH.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaDonDatHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNhanVien.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteNGAY.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteNGAY.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaDonDatHang.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsHangHoa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsKho)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNhaCC)).BeginInit();
@@ -487,24 +487,24 @@ namespace QLVT
             // gridView1
             // 
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colMADDH,
+            this.MADDH,
             this.colMANCC,
-            this.colMANV,
-            this.colNGAYLAP,
+            this.MANV,
+            this.NGAYLAP,
             this.colMAKHO});
             this.gridView1.GridControl = this.gcDDH;
             this.gridView1.Name = "gridView1";
             // 
-            // colMADDH
+            // MADDH
             // 
-            this.colMADDH.Caption = "MÃ DDH";
-            this.colMADDH.FieldName = "MADDH";
-            this.colMADDH.MinWidth = 25;
-            this.colMADDH.Name = "colMADDH";
-            this.colMADDH.OptionsColumn.AllowEdit = false;
-            this.colMADDH.Visible = true;
-            this.colMADDH.VisibleIndex = 0;
-            this.colMADDH.Width = 94;
+            this.MADDH.Caption = "MÃ DDH";
+            this.MADDH.FieldName = "MADDH";
+            this.MADDH.MinWidth = 25;
+            this.MADDH.Name = "MADDH";
+            this.MADDH.OptionsColumn.AllowEdit = false;
+            this.MADDH.Visible = true;
+            this.MADDH.VisibleIndex = 0;
+            this.MADDH.Width = 94;
             // 
             // colMANCC
             // 
@@ -517,27 +517,27 @@ namespace QLVT
             this.colMANCC.VisibleIndex = 1;
             this.colMANCC.Width = 94;
             // 
-            // colMANV
+            // MANV
             // 
-            this.colMANV.Caption = "MÃ NHÂN VIÊN";
-            this.colMANV.FieldName = "MANV";
-            this.colMANV.MinWidth = 25;
-            this.colMANV.Name = "colMANV";
-            this.colMANV.OptionsColumn.AllowEdit = false;
-            this.colMANV.Visible = true;
-            this.colMANV.VisibleIndex = 2;
-            this.colMANV.Width = 94;
+            this.MANV.Caption = "MÃ NHÂN VIÊN";
+            this.MANV.FieldName = "MANV";
+            this.MANV.MinWidth = 25;
+            this.MANV.Name = "MANV";
+            this.MANV.OptionsColumn.AllowEdit = false;
+            this.MANV.Visible = true;
+            this.MANV.VisibleIndex = 2;
+            this.MANV.Width = 94;
             // 
-            // colNGAYLAP
+            // NGAYLAP
             // 
-            this.colNGAYLAP.Caption = "NGÀY LẬP";
-            this.colNGAYLAP.FieldName = "NGAYLAP";
-            this.colNGAYLAP.MinWidth = 25;
-            this.colNGAYLAP.Name = "colNGAYLAP";
-            this.colNGAYLAP.OptionsColumn.AllowEdit = false;
-            this.colNGAYLAP.Visible = true;
-            this.colNGAYLAP.VisibleIndex = 3;
-            this.colNGAYLAP.Width = 94;
+            this.NGAYLAP.Caption = "NGÀY LẬP";
+            this.NGAYLAP.FieldName = "NGAYLAP";
+            this.NGAYLAP.MinWidth = 25;
+            this.NGAYLAP.Name = "NGAYLAP";
+            this.NGAYLAP.OptionsColumn.AllowEdit = false;
+            this.NGAYLAP.Visible = true;
+            this.NGAYLAP.VisibleIndex = 3;
+            this.NGAYLAP.Width = 94;
             // 
             // colMAKHO
             // 
@@ -745,6 +745,7 @@ namespace QLVT
             // 
             // gbDH
             // 
+            this.gbDH.Controls.Add(this.txtMaDonDatHang);
             this.gbDH.Controls.Add(this.cmbNhaCC);
             this.gbDH.Controls.Add(this.cmbKho);
             this.gbDH.Controls.Add(this.txtMaNhanVien);
@@ -753,7 +754,6 @@ namespace QLVT
             this.gbDH.Controls.Add(this.dteNGAY);
             this.gbDH.Controls.Add(mANVLabel);
             this.gbDH.Controls.Add(mANCCLabel);
-            this.gbDH.Controls.Add(this.txtMaDonDatHang);
             this.gbDH.Controls.Add(mADDHLabel);
             this.gbDH.Dock = System.Windows.Forms.DockStyle.Top;
             this.gbDH.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -763,6 +763,17 @@ namespace QLVT
             this.gbDH.TabIndex = 0;
             this.gbDH.TabStop = false;
             this.gbDH.Text = "Đơn Hàng";
+            // 
+            // txtMaDonDatHang
+            // 
+            this.txtMaDonDatHang.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDDH, "MADDH", true));
+            this.txtMaDonDatHang.Location = new System.Drawing.Point(169, 22);
+            this.txtMaDonDatHang.MenuManager = this.barManager1;
+            this.txtMaDonDatHang.Name = "txtMaDonDatHang";
+            this.txtMaDonDatHang.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMaDonDatHang.Properties.Appearance.Options.UseFont = true;
+            this.txtMaDonDatHang.Size = new System.Drawing.Size(207, 26);
+            this.txtMaDonDatHang.TabIndex = 4;
             // 
             // cmbNhaCC
             // 
@@ -808,17 +819,6 @@ namespace QLVT
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.dteNGAY.Size = new System.Drawing.Size(207, 26);
             this.dteNGAY.TabIndex = 4;
-            // 
-            // txtMaDonDatHang
-            // 
-            this.txtMaDonDatHang.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.bdsDDH, "MADDH", true));
-            this.txtMaDonDatHang.Location = new System.Drawing.Point(169, 22);
-            this.txtMaDonDatHang.MenuManager = this.barManager1;
-            this.txtMaDonDatHang.Name = "txtMaDonDatHang";
-            this.txtMaDonDatHang.Properties.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMaDonDatHang.Properties.Appearance.Options.UseFont = true;
-            this.txtMaDonDatHang.Size = new System.Drawing.Size(207, 26);
-            this.txtMaDonDatHang.TabIndex = 4;
             // 
             // pHIEUNHAPTableAdapter
             // 
@@ -906,10 +906,10 @@ namespace QLVT
             ((System.ComponentModel.ISupportInitialize)(this.txtSoLuong.Properties)).EndInit();
             this.gbDH.ResumeLayout(false);
             this.gbDH.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtMaDonDatHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtMaNhanVien.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteNGAY.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dteNGAY.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtMaDonDatHang.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsHangHoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsKho)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdsNhaCC)).EndInit();
@@ -940,10 +940,10 @@ namespace QLVT
         private DSTableAdapters.TableAdapterManager tableAdapterManager;
         private DevExpress.XtraGrid.GridControl gcDDH;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraGrid.Columns.GridColumn colMADDH;
+        private DevExpress.XtraGrid.Columns.GridColumn MADDH;
         private DevExpress.XtraGrid.Columns.GridColumn colMANCC;
-        private DevExpress.XtraGrid.Columns.GridColumn colMANV;
-        private DevExpress.XtraGrid.Columns.GridColumn colNGAYLAP;
+        private DevExpress.XtraGrid.Columns.GridColumn MANV;
+        private DevExpress.XtraGrid.Columns.GridColumn NGAYLAP;
         private DevExpress.XtraGrid.Columns.GridColumn colMAKHO;
         private System.Windows.Forms.GroupBox groupBox1;
         private DSTableAdapters.PHIEUNHAPTableAdapter pHIEUNHAPTableAdapter;
@@ -953,7 +953,6 @@ namespace QLVT
         private System.Windows.Forms.GroupBox gbCTDH;
         private System.Windows.Forms.GroupBox gbDH;
         private DevExpress.XtraEditors.DateEdit dteNGAY;
-        private DevExpress.XtraEditors.TextEdit txtMaDonDatHang;
         private DevExpress.XtraEditors.TextEdit txtMaNhanVien;
         private System.Windows.Forms.BindingSource bdsHangHoa;
         private System.Windows.Forms.BindingSource bdsKho;
@@ -987,5 +986,6 @@ namespace QLVT
         private DevExpress.XtraGrid.Columns.GridColumn colDONGIA;
         private DSTableAdapters.CT_DONDHTableAdapter cT_DONDHTableAdapter;
         private System.Windows.Forms.BindingSource bdsPhieuNhap;
+        private DevExpress.XtraEditors.TextEdit txtMaDonDatHang;
     }
 }

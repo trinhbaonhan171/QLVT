@@ -18,6 +18,7 @@ namespace QLVT
     {
         int viTri = 0;
         bool dangThemMoi = false;
+        bool dangxoa = false;
         Stack undoList = new Stack();
 
         BindingSource bds = null;
@@ -498,16 +499,16 @@ namespace QLVT
                     return false;
                 }
 
-                if (txtSoLuong.Value < 0)
+                if (txtSoLuong.Value < 1)
                 {
-                    MessageBox.Show("Số lượng hàng hóa không thể bé hơn 0 !", "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Số lượng hàng hóa không thể bé hơn 1 !", "Thông báo", MessageBoxButtons.OK);
                     txtSoLuong.Focus();
                     return false;
                 }
 
-                if (txtDonGia.Value < 0)
+                if (txtDonGia.Value < 1)
                 {
-                    MessageBox.Show("Đơn giá không thể bé hơn 0 VND !", "Thông báo", MessageBoxButtons.OK);
+                    MessageBox.Show("Đơn giá không thể bé hơn 1 VND !", "Thông báo", MessageBoxButtons.OK);
                     txtDonGia.Focus();
                     return false;
                 }
@@ -612,6 +613,42 @@ namespace QLVT
             int viTriConTro = bdsHoaDon.Position;
             int viTriMaPhieuXuat = bdsHoaDon.Find("SOHD", maPhieuXuat);
 
+            if (cheDo == "Chi Tiết Hóa Đơn")
+            {
+                String mahh_add = cmbHH.SelectedValue.ToString().Trim();
+                String kiemtraMahhMaDDH =
+                        "DECLARE	@result int " +
+                        "EXEC @result = sp_KiemTraMaHangHoaVaMaHoaDon '" + mahh_add + "', " + maPhieuXuat + "; " +
+                        "SELECT @result AS 'Value';";
+                SqlCommand ktramahhmaddh = new SqlCommand(kiemtraMahhMaDDH, Program.conn);
+                try
+                {
+                    Program.myReader = Program.ExecSqlDataReader(kiemtraMahhMaDDH);
+                    /*khong co ket qua tra ve thi ket thuc luon*/
+                    if (Program.myReader == null)
+                    {
+                        return;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Thực thi database thất bại!\n\n" + ex.Message, "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Console.WriteLine(ex.Message);
+                    return;
+                }
+                Program.myReader.Read();
+                int check = int.Parse(Program.myReader.GetValue(0).ToString());
+                Program.myReader.Close();
+                if (check == 1)
+                {
+                    MessageBox.Show("Mã hàng hóa này đã được sử dụng cho hóa đơn này !\n\n", "Thông báo",
+                            MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+
             /*Dang them moi phieu nhap*/
             if (result == 1 && cheDo == "Hóa Đơn" && viTriMaPhieuXuat != viTriConTro)
             {
@@ -637,7 +674,8 @@ namespace QLVT
                                     cauTruyVanHoanTac =
                                    "DELETE FROM DBO.HOADON " +
                                    "WHERE SOHD = '" + maPhieuXuat + "'";
-                                }    
+                                }
+                                ((DataRowView)(bdsHoaDon.Current))["SOHD"] = txtSoHD.Text.ToString().Trim();
                                 ((DataRowView)(bdsHoaDon.Current))["MAKH"] = cmbKhachHang.SelectedValue.ToString().Trim();
                                 ((DataRowView)(bdsHoaDon.Current))["MAKHO"] = cmbKho.SelectedValue.ToString().Trim();
                             }
@@ -819,7 +857,7 @@ namespace QLVT
             if (cheDo == "Hóa Đơn")
             {
                 drv = ((DataRowView)bdsHoaDon[bdsHoaDon.Position]);
-                String maNhanVien = drv["MANV"].ToString();
+                String maNhanVien = drv["MANV"].ToString().Trim();
                 if (Program.username != maNhanVien)
                 {
                     MessageBox.Show("Không xóa hóa đơn không phải do mình tạo", "Thông báo", MessageBoxButtons.OK);
